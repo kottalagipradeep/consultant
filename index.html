@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HighVelocity Consulting | Security, Risk, Talent & Learning</title>
+  <meta name="description" content="HighVelocity Consulting provides enterprise security, compliance, risk governance, HR, talent acquisition, and workforce learning solutions for growing organizations.">
+  <meta name="keywords" content="Cybersecurity Consulting, Compliance Consulting, ISO 27001, SOC 2, PCI DSS, GDPR, IT Risk Management, Internal Audit, Technology Consulting, HR Consulting, Recruitment, Talent Acquisition, Workforce Solutions, Student Internship, Technical Training, Industry Readiness, Corporate Training">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              navy: '#09111e',
+              slate: '#1e293b',
+              surface: '#f8fafc'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .page-view { display: none; }
+    .page-view.active { display: block; animation: pageFadeIn 0.25s ease-out forwards; }
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .mega-menu {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .has-dropdown:hover .mega-menu,
+    .has-dropdown:focus-within .mega-menu {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .dropdown-link {
+      display: block;
+      padding: 0.35rem 0.6rem;
+      border-radius: 0.375rem;
+      font-size: 0.8125rem;
+      color: #475569;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .dropdown-link:hover {
+      background-color: #f1f5f9;
+      color: #0284c7;
+      padding-left: 0.85rem;
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+  <!-- ================= TOP UTILITY STRIP ================= -->
+  <div class="h-1 bg-gradient-to-r from-brand-500 via-blue-600 to-teal-500"></div>
+
+  <!-- ================= MAIN HEADER & NAVIGATION ================= -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#home" onclick="navigateTo('home')" class="flex items-center gap-3.5 group">
+          <div class="w-10 h-10 rounded-xl bg-brand-50 border-2 border-brand-500 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+            <svg class="w-6 h-6 text-brand-500" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 2L3 14h7v8l10-12h-7V2z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-heading font-extrabold text-xl tracking-tight text-slate-900 leading-none">
+              HIGHVELOCITY <span class="text-brand-500">CONSULTING</span>
+            </div>
+            <div class="text-[10px] font-bold tracking-widest text-slate-500 uppercase mt-1">
+              Security • Risk • People
+            </div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation with Mega-Menus -->
+        <nav class="hidden lg:flex items-center space-x-1">
+          
+          <button onclick="navigateTo('home')" class="nav-btn px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-500 rounded-md transition-colors" data-page="home">Home</button>
+
+          <!-- 01 SECURITY, RISK & GOVERNANCE MEGA-MENU -->
+          <div class="has-dropdown relative">
+            <button onclick="navigateTo('security-gov')" class="nav-btn flex items-center gap-1 px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-500 rounded-md transition-colors" data-page="security-gov">
+              Security, Risk & Governance <i data-lucide="chevron-down" class="w-4 h-4 opacity-60"></i>
+            </button>
+            <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full w-[940px] bg-white border border-slate-200 rounded-xl shadow-2xl p-6 grid grid-cols-4 gap-6 mt-1 z-50">
+              
+              <!-- Column A: Cybersecurity Strategy -->
+              <div>
+                <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-100">
+                  <i data-lucide="shield-check" class="w-4 h-4 text-brand-500"></i>
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-900">Cybersecurity</span>
+                </div>
+                <div class="space-y-0.5">
+                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">Cybersecurity Consulting</a>
+                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">Security Gap Assessment</a>
+                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">Technical Controls Review</a>
+                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">Application Architecture</a>
+                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">API & Cloud Security Review</a>
+                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">Infrastructure Security</a>
+                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">Security Posture Audit</a>
+                </div>
+              </div>
+
+              <!-- Column B: Compliance & Governance -->
+              <div>
+                <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-100">
+                  <i data-lucide="file-check-2" class="w-4 h-4 text-emerald-600"></i>
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-900">Compliance & Gov</span>
+                </div>
+                <div class="space-y-0.5">
+                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link font-semibold text-slate-900">ISO 27001 (ISMS)</a>
+                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link font-semibold text-slate-900">SOC 2 (Type I & II)</a>
+                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link font-semibold text-slate-900">PCI DSS 4.0</a>
+                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link font-semibold text-slate-900">GDPR & Data Privacy</a>
+                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Compliance Gap Assessment</a>
+                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Risk & Compliance Consulting</a>
+                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Internal Audit</a>
+                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Control Assessment</a>
+                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Policy & Documentation</a>
+                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Audit Readiness</a>
+                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Evidence Management</a>
+                </div>
+              </div>
+
+              <!-- Column C: Risk Management -->
+              <div>
+                <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-100">
+                  <i data-lucide="alert-octagon" class="w-4 h-4 text-amber-600"></i>
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-900">Risk Management</span>
+                </div>
+                <div class="space-y-0.5">
+                  <a href="#risk" onclick="navigateTo('risk')" class="dropdown-link">Enterprise Risk Assessment</a>
+                  <a href="#risk" onclick="navigateTo('risk')" class="dropdown-link">IT Risk Assessment</a>
+                  <a href="#risk" onclick="navigateTo('risk')" class="dropdown-link">Cyber Risk Assessment</a>
+                  <a href="#risk" onclick="navigateTo('risk')" class="dropdown-link">Risk Register Development</a>
+                  <a href="#risk" onclick="navigateTo('risk')" class="dropdown-link">Risk Treatment & Remediation</a>
+                  <a href="#risk" onclick="navigateTo('risk')" class="dropdown-link">Third-Party / Vendor Risk</a>
+                </div>
+              </div>
+
+              <!-- Column D: Technology Consulting -->
+              <div>
+                <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-100">
+                  <i data-lucide="cpu" class="w-4 h-4 text-blue-600"></i>
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-900">Tech Consulting</span>
+                </div>
+                <div class="space-y-0.5">
+                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">Technology Strategy</a>
+                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">IT Process Consulting</a>
+                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">Cloud Architecture Review</a>
+                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">Azure Advisory</a>
+                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">Technology Risk</a>
+                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">IT Governance</a>
+                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">Digital Transformation</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 02 HR & TALENT DROPDOWN -->
+          <div class="has-dropdown relative">
+            <button onclick="navigateTo('hr-talent')" class="nav-btn flex items-center gap-1 px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-500 rounded-md transition-colors" data-page="hr-talent">
+              HR & Talent <i data-lucide="chevron-down" class="w-4 h-4 opacity-60"></i>
+            </button>
+            <div class="mega-menu absolute left-0 top-full w-72 bg-white border border-slate-200 rounded-xl shadow-2xl p-4 mt-1 z-50 space-y-1">
+              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link font-semibold text-slate-900">HR Consulting</a>
+              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link">Talent Acquisition</a>
+              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link">Recruitment Support</a>
+              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link">Workforce Solutions</a>
+              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link">Workforce Planning</a>
+              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link">HR Process Development</a>
+              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link">Talent Development</a>
+            </div>
+          </div>
+
+          <!-- 03 LEARNING & CAREER DROPDOWN -->
+          <div class="has-dropdown relative">
+            <button onclick="navigateTo('learning')" class="nav-btn flex items-center gap-1 px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-500 rounded-md transition-colors" data-page="learning">
+              Learning & Career <i data-lucide="chevron-down" class="w-4 h-4 opacity-60"></i>
+            </button>
+            <div class="mega-menu absolute left-0 top-full w-72 bg-white border border-slate-200 rounded-xl shadow-2xl p-4 mt-1 z-50 space-y-1">
+              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link font-semibold text-slate-900">Student Internships</a>
+              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link">Degree Student Programs</a>
+              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link">Pre-Degree Programs</a>
+              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link">Technical Training</a>
+              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link">Industry Readiness</a>
+              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link">Corporate Training</a>
+              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link">Career Development</a>
+            </div>
+          </div>
+
+          <button onclick="navigateTo('about')" class="nav-btn px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-500 rounded-md transition-colors" data-page="about">About Us</button>
+          <button onclick="navigateTo('insights')" class="nav-btn px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-500 rounded-md transition-colors" data-page="insights">Insights</button>
+        </nav>
+
+        <!-- Primary Header CTA -->
+        <div class="hidden lg:flex items-center gap-3">
+          <button onclick="navigateTo('contact')" class="inline-flex items-center justify-center px-4 py-2.5 text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 rounded-lg shadow-xs transition-all hover:shadow hover:-translate-y-0.5">
+            Talk to an Expert
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="lg:hidden flex items-center">
+          <button id="mobileMenuToggle" class="p-2 rounded-lg text-slate-700 hover:bg-slate-100" aria-label="Toggle navigation">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Nested Navigation Accordion -->
+    <div id="mobileMenu" class="hidden lg:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 max-h-[80vh] overflow-y-auto space-y-2">
+      <button onclick="navigateTo('home'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 font-bold text-slate-900 hover:bg-slate-50 rounded-md">Home</button>
+      
+      <!-- Mobile Security & Governance Accordion -->
+      <div class="border-t border-slate-100 pt-2">
+        <button onclick="toggleAccordion('mobile-sec-gov')" class="flex items-center justify-between w-full px-3 py-2 font-bold text-slate-900 hover:bg-slate-50 rounded-md">
+          <span>Security, Risk & Governance</span>
+          <i data-lucide="chevron-down" class="w-4 h-4"></i>
+        </button>
+        <div id="mobile-sec-gov" class="hidden pl-4 pr-2 py-2 space-y-3 bg-slate-50/70 rounded-lg text-xs">
+          <div>
+            <div class="font-bold text-brand-600 uppercase tracking-wider mb-1">Cybersecurity</div>
+            <a href="#cybersecurity" onclick="navigateTo('cybersecurity'); toggleMobileMenu()" class="block py-1 text-slate-700">Security Consulting & Gap Assessments</a>
+          </div>
+          <div>
+            <div class="font-bold text-emerald-700 uppercase tracking-wider mb-1">Compliance & Governance</div>
+            <a href="#compliance" onclick="navigateTo('compliance'); toggleMobileMenu()" class="block py-1 text-slate-700 font-semibold">ISO 27001, SOC 2, PCI DSS, GDPR</a>
+            <a href="#compliance" onclick="navigateTo('compliance'); toggleMobileMenu()" class="block py-1 text-slate-700">Internal Audit & Evidence Management</a>
+          </div>
+          <div>
+            <div class="font-bold text-amber-700 uppercase tracking-wider mb-1">Risk Management</div>
+            <a href="#risk" onclick="navigateTo('risk'); toggleMobileMenu()" class="block py-1 text-slate-700">Enterprise, IT & Third-Party Risk</a>
+          </div>
+          <div>
+            <div class="font-bold text-blue-700 uppercase tracking-wider mb-1">Technology Consulting</div>
+            <a href="#tech-consulting" onclick="navigateTo('tech-consulting'); toggleMobileMenu()" class="block py-1 text-slate-700">Cloud Architecture & IT Governance</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile HR & Talent Accordion -->
+      <div class="border-t border-slate-100 pt-2">
+        <button onclick="toggleAccordion('mobile-hr')" class="flex items-center justify-between w-full px-3 py-2 font-bold text-slate-900 hover:bg-slate-50 rounded-md">
+          <span>HR & Talent</span>
+          <i data-lucide="chevron-down" class="w-4 h-4"></i>
+        </button>
+        <div id="mobile-hr" class="hidden pl-4 pr-2 py-2 space-y-1 bg-slate-50/70 rounded-lg text-xs">
+          <a href="#hr-talent" onclick="navigateTo('hr-talent'); toggleMobileMenu()" class="block py-1 text-slate-700 font-semibold">HR Consulting</a>
+          <a href="#hr-talent" onclick="navigateTo('hr-talent'); toggleMobileMenu()" class="block py-1 text-slate-700">Talent Acquisition & Recruitment</a>
+          <a href="#hr-talent" onclick="navigateTo('hr-talent'); toggleMobileMenu()" class="block py-1 text-slate-700">Workforce Planning & Capability</a>
+        </div>
+      </div>
+
+      <!-- Mobile Learning Accordion -->
+      <div class="border-t border-slate-100 pt-2">
+        <button onclick="toggleAccordion('mobile-learning')" class="flex items-center justify-between w-full px-3 py-2 font-bold text-slate-900 hover:bg-slate-50 rounded-md">
+          <span>Learning & Career</span>
+          <i data-lucide="chevron-down" class="w-4 h-4"></i>
+        </button>
+        <div id="mobile-learning" class="hidden pl-4 pr-2 py-2 space-y-1 bg-slate-50/70 rounded-lg text-xs">
+          <a href="#learning" onclick="navigateTo('learning'); toggleMobileMenu()" class="block py-1 text-slate-700 font-semibold">Student Internships</a>
+          <a href="#learning" onclick="navigateTo('learning'); toggleMobileMenu()" class="block py-1 text-slate-700">Degree & Pre-Degree Programs</a>
+          <a href="#learning" onclick="navigateTo('learning'); toggleMobileMenu()" class="block py-1 text-slate-700">Technical & Corporate Training</a>
+          <a href="#learning" onclick="navigateTo('learning'); toggleMobileMenu()" class="block py-1 text-slate-700">Industry Readiness</a>
+        </div>
+      </div>
+
+      <button onclick="navigateTo('about'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 font-bold text-slate-900 hover:bg-slate-50 rounded-md">About Us</button>
+      <button onclick="navigateTo('insights'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 font-bold text-slate-900 hover:bg-slate-50 rounded-md">Insights</button>
+      
+      <div class="pt-3">
+        <button onclick="navigateTo('contact'); toggleMobileMenu()" class="w-full py-2.5 text-center text-sm font-bold text-white bg-brand-500 rounded-lg shadow-xs">
+          Talk to an Expert
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT WRAPPER ================= -->
+  <main class="flex-grow">
+
+    <!-- ============================================================= -->
+    <!-- VIEW 1: HOME PAGE                                             -->
+    <!-- ============================================================= -->
+    <div id="page-home" class="page-view active">
+      
+      <!-- HERO -->
+      <section class="relative bg-gradient-to-b from-slate-50 via-white to-white py-16 sm:py-24 border-b border-slate-200 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div class="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-600 text-xs font-bold uppercase tracking-wider">
+                <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                Security • Risk • People
+              </div>
+              <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.12]">
+                Accelerating Businesses. <br class="hidden sm:inline">
+                <span class="text-brand-500">Developing People.</span>
+              </h1>
+              <p class="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl">
+                HighVelocity Consulting helps organizations strengthen their cybersecurity, compliance, risk governance and people capabilities — while developing the next generation of industry-ready talent.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                <button onclick="navigateTo('contact')" class="inline-flex items-center justify-center px-6 py-3.5 text-base font-bold text-white bg-brand-500 hover:bg-brand-600 rounded-lg shadow-xs transition-all hover:shadow hover:-translate-y-0.5">
+                  Talk to an Expert <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </button>
+                <button onclick="scrollToSection('core-verticals')" class="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors">
+                  Explore Our Services
+                </button>
+              </div>
+            </div>
+
+            <!-- Visual Framework Card -->
+            <div class="lg:col-span-5 mt-10 lg:mt-0">
+              <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xl shadow-slate-200/50 relative">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Integrated Consulting Platform</span>
+                  <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">Unified Delivery</span>
+                </div>
+                <div class="space-y-3.5 my-6">
+                  <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <div class="p-2 rounded-lg bg-white border border-slate-200 text-brand-500 shadow-xs"><i data-lucide="shield" class="w-4 h-4"></i></div>
+                      <div class="text-sm font-bold text-slate-900">Cybersecurity Architecture</div>
+                    </div>
+                    <span class="text-xs font-semibold text-slate-500">Defend</span>
+                  </div>
+                  <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <div class="p-2 rounded-lg bg-white border border-slate-200 text-emerald-600 shadow-xs"><i data-lucide="file-check" class="w-4 h-4"></i></div>
+                      <div class="text-sm font-bold text-slate-900">Compliance & Governance</div>
+                    </div>
+                    <span class="text-xs font-semibold text-emerald-600">ISO / SOC 2</span>
+                  </div>
+                  <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <div class="p-2 rounded-lg bg-white border border-slate-200 text-amber-600 shadow-xs"><i data-lucide="users" class="w-4 h-4"></i></div>
+                      <div class="text-sm font-bold text-slate-900">HR & Workforce Solutions</div>
+                    </div>
+                    <span class="text-xs font-semibold text-slate-500">People</span>
+                  </div>
+                  <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <div class="p-2 rounded-lg bg-white border border-slate-200 text-blue-600 shadow-xs"><i data-lucide="graduation-cap" class="w-4 h-4"></i></div>
+                      <div class="text-sm font-bold text-slate-900">Learning & Career</div>
+                    </div>
+                    <span class="text-xs font-semibold text-blue-600">Talent</span>
+                  </div>
+                </div>
+                <div class="text-center text-xs font-semibold text-slate-500">
+                  Accelerating Business Capability. Cultivating Human Potential.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- WHO WE HELP SECTION -->
+      <section class="py-16 bg-slate-50/70 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-500">Built Around Your Needs</span>
+            <h2 class="font-heading text-3xl font-bold text-slate-900 mt-1">Who We Help</h2>
+            <p class="text-slate-600 mt-2 text-sm sm:text-base">Targeted capability development and strategic advisory aligned to your institutional stage.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-500 flex items-center justify-center mb-4"><i data-lucide="briefcase" class="w-5 h-5"></i></div>
+                <h3 class="font-bold text-slate-900 text-base mb-2">Businesses & Founders</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">Strengthen business operations, cloud architectures, and enterprise risk management to unblock growth.</p>
+              </div>
+              <button onclick="navigateTo('security-gov')" class="mt-4 text-xs font-bold text-brand-600 hover:underline inline-flex items-center">Explore Solutions <i data-lucide="chevron-right" class="w-3.5 h-3.5 ml-1"></i></button>
+            </div>
+
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+                <h3 class="font-bold text-slate-900 text-base mb-2">Tech & Security Leaders</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">Achieve audit readiness for ISO 27001, SOC 2, PCI DSS, GDPR, and technical security gap reviews.</p>
+              </div>
+              <button onclick="navigateTo('compliance')" class="mt-4 text-xs font-bold text-emerald-700 hover:underline inline-flex items-center">Explore Compliance <i data-lucide="chevron-right" class="w-3.5 h-3.5 ml-1"></i></button>
+            </div>
+
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-4"><i data-lucide="users" class="w-5 h-5"></i></div>
+                <h3 class="font-bold text-slate-900 text-base mb-2">HR & Business Leaders</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">Build stronger teams, streamline talent acquisition, and structure scalable people operations.</p>
+              </div>
+              <button onclick="navigateTo('hr-talent')" class="mt-4 text-xs font-bold text-amber-700 hover:underline inline-flex items-center">Explore HR Services <i data-lucide="chevron-right" class="w-3.5 h-3.5 ml-1"></i></button>
+            </div>
+
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-4"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div>
+                <h3 class="font-bold text-slate-900 text-base mb-2">Students & Institutions</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">Develop practical engineering skills, access live projects, and secure verifiable industry internships.</p>
+              </div>
+              <button onclick="navigateTo('learning')" class="mt-4 text-xs font-bold text-blue-700 hover:underline inline-flex items-center">Explore Programs <i data-lucide="chevron-right" class="w-3.5 h-3.5 ml-1"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- THREE CORE VERTICALS -->
+      <section id="core-verticals" class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mb-14">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-500">Core Practices</span>
+            <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Our Three Major Verticals</h2>
+            <p class="text-slate-600 mt-2 max-w-2xl">Structured advisory and talent development without consulting bloat.</p>
+          </div>
+
+          <div class="space-y-10">
+            <!-- 01 Security, Risk & Governance -->
+            <div class="border border-slate-200 rounded-2xl p-8 bg-gradient-to-r from-slate-50 via-white to-white">
+              <div class="lg:flex lg:items-start lg:justify-between">
+                <div class="lg:max-w-md">
+                  <div class="text-xs font-bold tracking-widest uppercase text-brand-500 mb-1">Vertical 01</div>
+                  <h3 class="font-heading text-2xl font-bold text-slate-900">SECURITY, RISK & GOVERNANCE</h3>
+                  <p class="text-sm font-semibold text-slate-700 mt-1">Strengthen your posture. Reduce risk. Build customer trust.</p>
+                  <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+                    Uniting Cybersecurity Architecture, Compliance & Governance, Risk Management, and Technology Advisory under one structured delivery approach.
+                  </p>
+                  <div class="mt-6">
+                    <button onclick="navigateTo('security-gov')" class="inline-flex items-center text-sm font-bold text-brand-600 hover:text-brand-700">
+                      Explore Security, Risk & Governance →
+                    </button>
+                  </div>
+                </div>
+                <div class="mt-6 lg:mt-0 lg:max-w-xl w-full grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                  <div onclick="navigateTo('compliance'); prefillContact('ISO 27001')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">ISO 27001 ISMS</div>
+                  <div onclick="navigateTo('compliance'); prefillContact('SOC 2')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">SOC 2 Readiness</div>
+                  <div onclick="navigateTo('compliance'); prefillContact('PCI DSS')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">PCI DSS 4.0</div>
+                  <div onclick="navigateTo('compliance'); prefillContact('GDPR & Privacy')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">GDPR & Privacy</div>
+                  <div onclick="navigateTo('cybersecurity'); prefillContact('Cybersecurity Consulting')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">Security Gap Review</div>
+                  <div onclick="navigateTo('risk'); prefillContact('Risk Management')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">Enterprise Risk</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 02 HR & Talent -->
+            <div class="border border-slate-200 rounded-2xl p-8 bg-gradient-to-r from-slate-50 via-white to-white">
+              <div class="lg:flex lg:items-start lg:justify-between">
+                <div class="lg:max-w-md">
+                  <div class="text-xs font-bold tracking-widest uppercase text-emerald-600 mb-1">Vertical 02</div>
+                  <h3 class="font-heading text-2xl font-bold text-slate-900">HR & TALENT</h3>
+                  <p class="text-sm font-semibold text-slate-700 mt-1">Build the teams that move your business forward.</p>
+                  <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+                    Strategic workforce planning, HR policy development, and structured technical recruitment for scaling enterprises.
+                  </p>
+                  <div class="mt-6">
+                    <button onclick="navigateTo('hr-talent')" class="inline-flex items-center text-sm font-bold text-emerald-700 hover:text-emerald-800">
+                      Explore HR & Talent →
+                    </button>
+                  </div>
+                </div>
+                <div class="mt-6 lg:mt-0 lg:max-w-xl w-full grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                  <div onclick="navigateTo('hr-talent'); prefillContact('HR Consulting')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">HR Consulting</div>
+                  <div onclick="navigateTo('hr-talent'); prefillContact('Talent Acquisition')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">Talent Acquisition</div>
+                  <div onclick="navigateTo('hr-talent'); prefillContact('Recruitment')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">Recruitment Support</div>
+                  <div onclick="navigateTo('hr-talent'); prefillContact('Workforce Solutions')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">Workforce Planning</div>
+                  <div onclick="navigateTo('hr-talent'); prefillContact('HR Consulting')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">HR Process Design</div>
+                  <div onclick="navigateTo('hr-talent'); prefillContact('Workforce Solutions')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">Talent Programs</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 03 Learning & Career -->
+            <div class="border border-slate-200 rounded-2xl p-8 bg-gradient-to-r from-slate-50 via-white to-white">
+              <div class="lg:flex lg:items-start lg:justify-between">
+                <div class="lg:max-w-md">
+                  <div class="text-xs font-bold tracking-widest uppercase text-blue-600 mb-1">Vertical 03</div>
+                  <h3 class="font-heading text-2xl font-bold text-slate-900">LEARNING & CAREER</h3>
+                  <p class="text-sm font-semibold text-slate-700 mt-1">Learn. Apply. Become Industry-Ready.</p>
+                  <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+                    Bridging university education with practical enterprise requirements through internships, degree programs, and corporate upskilling.
+                  </p>
+                  <div class="mt-6">
+                    <button onclick="navigateTo('learning')" class="inline-flex items-center text-sm font-bold text-blue-700 hover:text-blue-800">
+                      Explore Learning & Career →
+                    </button>
+                  </div>
+                </div>
+                <div class="mt-6 lg:mt-0 lg:max-w-xl w-full grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                  <div onclick="navigateTo('learning'); prefillContact('Student Internship')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Student Internships</div>
+                  <div onclick="navigateTo('learning'); prefillContact('Degree Student Programs')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Degree Programs</div>
+                  <div onclick="navigateTo('learning'); prefillContact('Technical Training')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Technical Training</div>
+                  <div onclick="navigateTo('learning'); prefillContact('Industry Readiness')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Industry Readiness</div>
+                  <div onclick="navigateTo('learning'); prefillContact('Corporate Training')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Corporate Training</div>
+                  <div onclick="navigateTo('learning'); prefillContact('Career Development')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Career Mentorship</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY HIGHVELOCITY SECTION -->
+      <section class="py-20 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-500">Credibility & Execution</span>
+            <h2 class="font-heading text-3xl font-bold text-slate-900 mt-1">Why HighVelocity Consulting?</h2>
+            <p class="text-slate-600 mt-2 text-sm sm:text-base">We prioritize concrete business outcomes, structured evidence, and verifiable capability.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs">
+              <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-500 flex items-center justify-center mb-4"><i data-lucide="check-circle" class="w-5 h-5"></i></div>
+              <h3 class="font-bold text-slate-900 text-base mb-2">Practical Expertise</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Solutions designed around real business constraints, engineering workflows, and actual career requirements.</p>
+            </div>
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs">
+              <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-500 flex items-center justify-center mb-4"><i data-lucide="layers" class="w-5 h-5"></i></div>
+              <h3 class="font-bold text-slate-900 text-base mb-2">Integrated Capability</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Seamlessly uniting cybersecurity architecture, compliance, risk management, HR, and talent development.</p>
+            </div>
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs">
+              <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-500 flex items-center justify-center mb-4"><i data-lucide="target" class="w-5 h-5"></i></div>
+              <h3 class="font-bold text-slate-900 text-base mb-2">Outcome Focused</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Focus on hands-on implementation, audit-ready evidence, and measurable milestones rather than abstract theory.</p>
+            </div>
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs">
+              <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-500 flex items-center justify-center mb-4"><i data-lucide="sliders" class="w-5 h-5"></i></div>
+              <h3 class="font-bold text-slate-900 text-base mb-2">Flexible Engagement</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Adaptable to your organization's exact size, technical maturity, and sprint cadence.</p>
+            </div>
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs sm:col-span-2 lg:col-span-2">
+              <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-500 flex items-center justify-center mb-4"><i data-lucide="handshake" class="w-5 h-5"></i></div>
+              <h3 class="font-bold text-slate-900 text-base mb-2">Long-Term Partnership</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">We support organizations beyond single transactions, providing year-round continuous compliance assurance and sustainable talent pipelines.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AUDIENCE-BASED CTA: "WHAT ARE YOU LOOKING TO SOLVE?" -->
+      <section class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-500">Quick Routing</span>
+            <h2 class="font-heading text-3xl font-bold text-slate-900 mt-1">What Are You Looking to Solve?</h2>
+            <p class="text-slate-600 mt-2 text-sm sm:text-base">Select your exact objective to initiate tailored advisory with pre-selected requirements.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div onclick="prefillContact('Cybersecurity Consulting')" class="p-5 border border-slate-200 rounded-xl bg-white hover:border-brand-500 hover:shadow-sm cursor-pointer transition-all flex items-center justify-between">
+              <span class="text-sm font-bold text-slate-900">I need help with Cybersecurity Gap Assessment</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-brand-500"></i>
+            </div>
+            <div onclick="prefillContact('ISO 27001')" class="p-5 border border-slate-200 rounded-xl bg-white hover:border-emerald-500 hover:shadow-sm cursor-pointer transition-all flex items-center justify-between">
+              <span class="text-sm font-bold text-slate-900">I need Compliance / ISO / SOC 2</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600"></i>
+            </div>
+            <div onclick="prefillContact('Risk Management')" class="p-5 border border-slate-200 rounded-xl bg-white hover:border-amber-500 hover:shadow-sm cursor-pointer transition-all flex items-center justify-between">
+              <span class="text-sm font-bold text-slate-900">I need Risk / Internal Audit Support</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-amber-600"></i>
+            </div>
+            <div onclick="prefillContact('HR Consulting')" class="p-5 border border-slate-200 rounded-xl bg-white hover:border-emerald-500 hover:shadow-sm cursor-pointer transition-all flex items-center justify-between">
+              <span class="text-sm font-bold text-slate-900">I need HR Process Consulting</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600"></i>
+            </div>
+            <div onclick="prefillContact('Recruitment')" class="p-5 border border-slate-200 rounded-xl bg-white hover:border-emerald-500 hover:shadow-sm cursor-pointer transition-all flex items-center justify-between">
+              <span class="text-sm font-bold text-slate-900">I need Recruitment / Talent Acquisition</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600"></i>
+            </div>
+            <div onclick="prefillContact('Student Internship')" class="p-5 border border-slate-200 rounded-xl bg-white hover:border-blue-500 hover:shadow-sm cursor-pointer transition-all flex items-center justify-between">
+              <span class="text-sm font-bold text-slate-900">I need Student Internships</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-blue-600"></i>
+            </div>
+            <div onclick="prefillContact('Technical Training')" class="p-5 border border-slate-200 rounded-xl bg-white hover:border-blue-500 hover:shadow-sm cursor-pointer transition-all flex items-center justify-between">
+              <span class="text-sm font-bold text-slate-900">I need Technical Training</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-blue-600"></i>
+            </div>
+            <div onclick="prefillContact('Corporate Training')" class="p-5 border border-slate-200 rounded-xl bg-white hover:border-blue-500 hover:shadow-sm cursor-pointer transition-all flex items-center justify-between">
+              <span class="text-sm font-bold text-slate-900">I need Corporate Training</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-blue-600"></i>
+            </div>
+            <div onclick="prefillContact('Other / Not Sure')" class="p-5 border border-slate-300 rounded-xl bg-slate-50 hover:border-slate-400 hover:shadow-sm cursor-pointer transition-all flex items-center justify-between">
+              <span class="text-sm font-bold text-slate-700">I'm not sure — Help me choose</span>
+              <i data-lucide="help-circle" class="w-4 h-4 text-slate-500"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- VIEW 2: SECURITY, RISK & GOVERNANCE (REPLACED BIZ & TECH)    -->
+    <!-- ============================================================= -->
+    <div id="page-security-gov" class="page-view">
+      <section class="bg-gradient-to-b from-slate-50 to-white py-16 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-500">Practice Area</span>
+          <h1 class="font-heading text-4xl sm:text-5xl font-extrabold text-slate-900 mt-2">Security, Risk & Governance</h1>
+          <p class="text-xl font-bold text-slate-700 mt-2">Strengthen Your Posture. Reduce Risk. Build Trust.</p>
+          <p class="text-sm text-slate-600 mt-3 max-w-3xl leading-relaxed">
+            HighVelocity Consulting helps organizations strengthen cybersecurity architecture, manage regulatory compliance, streamline risk governance, and build scalable technology capabilities without operational friction.
+          </p>
+        </div>
+      </section>
+
+      <!-- 4 Primary Categories as Large Premium Cards -->
+      <section class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8">
+          
+          <div class="p-8 border border-slate-200 rounded-2xl bg-white shadow-xs hover:border-brand-500 transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-500 flex items-center justify-center mb-6"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
+              <h2 class="font-heading text-2xl font-bold text-slate-900 mb-2">Cybersecurity Architecture</h2>
+              <p class="text-sm text-slate-600 mb-6">Protect your cloud infrastructure, APIs, and business data through comprehensive security gap assessments, baseline reviews, and technical control validation.</p>
+            </div>
+            <button onclick="navigateTo('cybersecurity')" class="px-5 py-2.5 text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 rounded-lg w-fit">
+              View Cybersecurity Practice →
+            </button>
+          </div>
+
+          <div class="p-8 border border-slate-200 rounded-2xl bg-white shadow-xs hover:border-emerald-500 transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6"><i data-lucide="file-check-2" class="w-6 h-6"></i></div>
+              <h2 class="font-heading text-2xl font-bold text-slate-900 mb-2">Compliance & Governance</h2>
+              <p class="text-sm text-slate-600 mb-6">Build the policies, controls, processes and evidence required to meet enterprise customer and regulatory expectations (ISO 27001, SOC 2, PCI DSS, GDPR).</p>
+            </div>
+            <button onclick="navigateTo('compliance')" class="px-5 py-2.5 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg w-fit">
+              View Compliance & Governance →
+            </button>
+          </div>
+
+          <div class="p-8 border border-slate-200 rounded-2xl bg-white shadow-xs hover:border-amber-500 transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6"><i data-lucide="alert-octagon" class="w-6 h-6"></i></div>
+              <h2 class="font-heading text-2xl font-bold text-slate-900 mb-2">Risk Management</h2>
+              <p class="text-sm text-slate-600 mb-6">Identify, assess and manage technology, operational and third-party vendor risks with structured enterprise risk registers and treatment roadmaps.</p>
+            </div>
+            <button onclick="navigateTo('risk')" class="px-5 py-2.5 text-sm font-bold text-white bg-amber-600 hover:bg-amber-700 rounded-lg w-fit">
+              View Risk Management →
+            </button>
+          </div>
+
+          <div class="p-8 border border-slate-200 rounded-2xl bg-white shadow-xs hover:border-blue-500 transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6"><i data-lucide="cpu" class="w-6 h-6"></i></div>
+              <h2 class="font-heading text-2xl font-bold text-slate-900 mb-2">Technology Consulting</h2>
+              <p class="text-sm text-slate-600 mb-6">Build stronger technology strategies, cloud architectures, and IT governance frameworks to support commercial scalability.</p>
+            </div>
+            <button onclick="navigateTo('tech-consulting')" class="px-5 py-2.5 text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-lg w-fit">
+              View Technology Consulting →
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Approach Timeline -->
+      <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-500">Execution Framework</span>
+            <h2 class="font-heading text-3xl font-bold text-slate-900 mt-1">How We Work</h2>
+            <p class="text-sm text-slate-600 mt-2">A 5-stage consulting model delivering audit-ready outcomes without operational friction.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200">
+              <div class="text-xs font-black text-brand-500 uppercase tracking-wider">01 Understand</div>
+              <p class="text-xs text-slate-600 mt-2">Understand the organization's goals, technical challenges, and commercial requirements.</p>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-slate-200">
+              <div class="text-xs font-black text-brand-500 uppercase tracking-wider">02 Assess</div>
+              <p class="text-xs text-slate-600 mt-2">Evaluate the current environment, risks, control capabilities, and regulatory gaps.</p>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-slate-200">
+              <div class="text-xs font-black text-brand-500 uppercase tracking-wider">03 Build</div>
+              <p class="text-xs text-slate-600 mt-2">Develop the required controls, policies, processes, documentation, and tooling.</p>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-slate-200">
+              <div class="text-xs font-black text-brand-500 uppercase tracking-wider">04 Validate</div>
+              <p class="text-xs text-slate-600 mt-2">Review effectiveness, conduct mock audits, and prepare for external auditor scrutiny.</p>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-slate-200">
+              <div class="text-xs font-black text-brand-500 uppercase tracking-wider">05 Improve</div>
+              <p class="text-xs text-slate-600 mt-2">Identify opportunities for continuous improvement and multi-framework scaling.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- VIEW 3: COMPLIANCE & GOVERNANCE (DEDICATED)                   -->
+    <!-- ============================================================= -->
+    <div id="page-compliance" class="page-view">
+      <section class="bg-gradient-to-b from-slate-50 to-white py-16 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Dedicated Practice</span>
+          <h1 class="font-heading text-4xl sm:text-5xl font-extrabold text-slate-900 mt-2">Compliance & Governance</h1>
+          <p class="text-xl font-bold text-emerald-700 mt-2">Build Confidence Through Stronger Compliance & Governance.</p>
+          <p class="text-sm text-slate-600 mt-3 max-w-3xl leading-relaxed">
+            We help organizations understand compliance requirements, identify control gaps, author policies, establish evidence collection, and prepare for external audits.
+          </p>
+        </div>
+      </section>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          
+          <!-- ISO 27001 -->
+          <div class="p-8 border border-slate-200 rounded-2xl bg-slate-50/50">
+            <div class="lg:flex lg:justify-between lg:items-start">
+              <div class="max-w-xl">
+                <span class="text-xs font-bold text-brand-600 uppercase">Information Security</span>
+                <h3 class="font-heading text-2xl font-bold text-slate-900 mt-1">ISO 27001 (ISMS)</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">Support organizations with Information Security Management System (ISMS) implementation, Annex A control design, and Stage 1 & 2 audit readiness.</p>
+                <div class="mt-4 grid grid-cols-2 gap-2 text-xs text-slate-700">
+                  <div>• ISMS implementation</div>
+                  <div>• Risk assessment & registers</div>
+                  <div>• Statement of Applicability (SoA)</div>
+                  <div>• Security policies & SOPs</div>
+                  <div>• Control implementation</div>
+                  <div>• Evidence preparation</div>
+                  <div>• Internal audit defense</div>
+                  <div>• Certification readiness</div>
+                </div>
+              </div>
+              <div class="mt-6 lg:mt-0">
+                <button onclick="prefillContact('ISO 27001')" class="px-5 py-2.5 text-xs font-bold text-white bg-brand-500 hover:bg-brand-600 rounded-lg shadow-xs">
+                  Discuss ISO 27001 Readiness
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SOC 2 -->
+          <div class="p-8 border border-slate-200 rounded-2xl bg-slate-50/50">
+            <div class="lg:flex lg:justify-between lg:items-start">
+              <div class="max-w-xl">
+                <span class="text-xs font-bold text-brand-600 uppercase">Trust Services Criteria</span>
+                <h3 class="font-heading text-2xl font-bold text-slate-900 mt-1">SOC 2 (Type I & II)</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">Help SaaS and cloud organizations prepare for SOC 2 assessments, satisfy enterprise customer questionnaires, and liaison with licensed CPA audit firms.</p>
+                <div class="mt-4 grid grid-cols-2 gap-2 text-xs text-slate-700">
+                  <div>• Control mapping</div>
+                  <div>• Gap assessment</div>
+                  <div>• Control documentation</div>
+                  <div>• Evidence workflows</div>
+                  <div>• Remediation planning</div>
+                  <div>• Audit preparation & defense</div>
+                </div>
+              </div>
+              <div class="mt-6 lg:mt-0">
+                <button onclick="prefillContact('SOC 2')" class="px-5 py-2.5 text-xs font-bold text-white bg-brand-500 hover:bg-brand-600 rounded-lg shadow-xs">
+                  Discuss SOC 2 Support
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PCI DSS -->
+          <div class="p-8 border border-slate-200 rounded-2xl bg-slate-50/50">
+            <div class="lg:flex lg:justify-between lg:items-start">
+              <div class="max-w-xl">
+                <span class="text-xs font-bold text-brand-600 uppercase">Payment Data Security</span>
+                <h3 class="font-heading text-2xl font-bold text-slate-900 mt-1">PCI DSS 4.0</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">Support FinTech and merchant organizations with Cardholder Data Environment (CDE) scope minimization, network segmentation analysis, and ROC/AOC readiness.</p>
+                <div class="mt-4 grid grid-cols-2 gap-2 text-xs text-slate-700">
+                  <div>• Scope assessment & reduction</div>
+                  <div>• Gap assessment</div>
+                  <div>• Technical security controls</div>
+                  <div>• Remediation planning</div>
+                  <div>• Documentation & policies</div>
+                  <div>• Audit readiness</div>
+                </div>
+              </div>
+              <div class="mt-6 lg:mt-0">
+                <button onclick="prefillContact('PCI DSS')" class="px-5 py-2.5 text-xs font-bold text-white bg-brand-500 hover:bg-brand-600 rounded-lg shadow-xs">
+                  Discuss PCI DSS Support
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- GDPR & Privacy -->
+          <div class="p-8 border border-slate-200 rounded-2xl bg-slate-50/50">
+            <div class="lg:flex lg:justify-between lg:items-start">
+              <div class="max-w-xl">
+                <span class="text-xs font-bold text-brand-600 uppercase">Data Protection</span>
+                <h3 class="font-heading text-2xl font-bold text-slate-900 mt-1">GDPR & Privacy Governance</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">Establish practical privacy operations, cross-border data transfer protocols, vendor due diligence, and regulatory compliance.</p>
+                <div class="mt-4 grid grid-cols-2 gap-2 text-xs text-slate-700">
+                  <div>• Privacy assessments</div>
+                  <div>• Data flow mapping</div>
+                  <div>• Records of Processing (RoPA)</div>
+                  <div>• DPIA assessments</div>
+                  <div>• Privacy risk management</div>
+                  <div>• Vendor privacy reviews</div>
+                  <div>• Privacy governance & SOPs</div>
+                  <div>• Team privacy training</div>
+                </div>
+              </div>
+              <div class="mt-6 lg:mt-0">
+                <button onclick="prefillContact('GDPR & Privacy')" class="px-5 py-2.5 text-xs font-bold text-white bg-brand-500 hover:bg-brand-600 rounded-lg shadow-xs">
+                  Discuss Privacy Compliance
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Other Core Governance Services Grid -->
+          <div class="grid md:grid-cols-3 gap-6 pt-6">
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Compliance Gap Assessment</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">Assess current operating posture against applicable standards and formulate prioritized remediation roadmaps.</p>
+              <button onclick="prefillContact('Compliance & Governance')" class="text-xs font-bold text-brand-600 hover:underline">Inquire →</button>
+            </div>
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Internal Audit</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">Independent review of processes, controls, and evidence repositories prior to external auditor engagement.</p>
+              <button onclick="prefillContact('Internal Audit')" class="text-xs font-bold text-brand-600 hover:underline">Inquire →</button>
+            </div>
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Control Assessment & Assurance</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">Evaluate control design, technical configuration, and operating effectiveness across IT systems.</p>
+              <button onclick="prefillContact('Compliance & Governance')" class="text-xs font-bold text-brand-600 hover:underline">Inquire →</button>
+            </div>
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Policy & Documentation</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">Draft institutional-grade security policies, incident response plans, and operational procedures.</p>
+              <button onclick="prefillContact('Compliance & Governance')" class="text-xs font-bold text-brand-600 hover:underline">Inquire →</button>
+            </div>
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Audit Readiness</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">Prepare personnel, documentation, and evidence trails for customer, regulatory, or certification audits.</p>
+              <button onclick="prefillContact('Compliance & Governance')" class="text-xs font-bold text-brand-600 hover:underline">Inquire →</button>
+            </div>
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Evidence & Compliance Management</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">Establish continuous automated workflows for capturing and maintaining audit evidence year-round.</p>
+              <button onclick="prefillContact('Compliance & Governance')" class="text-xs font-bold text-brand-600 hover:underline">Inquire →</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- VIEW 4: CYBERSECURITY CONSULTING (NO VAPT)                    -->
+    <!-- ============================================================= -->
+    <div id="page-cybersecurity" class="page-view">
+      <section class="bg-gradient-to-b from-slate-50 to-white py-16 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-500">Practice Area</span>
+          <h1 class="font-heading text-4xl sm:text-5xl font-extrabold text-slate-900 mt-2">Cybersecurity Consulting</h1>
+          <p class="text-xl font-bold text-brand-600 mt-2">Strengthen Your Security. Reduce Exposure.</p>
+          <p class="text-sm text-slate-600 mt-3 max-w-3xl leading-relaxed">
+            Practical, business-friendly defensive security architecture. We help organizations identify control weaknesses, evaluate system configurations, and protect critical digital assets.
+          </p>
+        </div>
+      </section>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Security Gap Assessment</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Comprehensive reviews of firewalls, IAM, multi-factor authentication, endpoint controls, and baseline security posture.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Technical Controls Review</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Validating the configuration and operational effectiveness of backup routines, logging, and incident response readiness.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Application Security Architecture</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Secure development lifecycle reviews, CI/CD pipeline security gates, and OWASP design standards mitigation.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">API Security Review</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Assessing authentication policies, token management, rate-limiting, and data leak prevention across REST and GraphQL APIs.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Infrastructure & Cloud Hardening</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Hardening network perimeters, IAM roles, cloud security posture (CSPM), virtual private clouds, and host servers.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Security Risk Assessment</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Evaluating operational threat exposure and creating practical, prioritized remediation blueprints for technical teams.</p>
+            </div>
+          </div>
+
+          <!-- Approach Banner -->
+          <div class="p-8 bg-slate-50 border border-slate-200 rounded-2xl">
+            <h3 class="font-heading text-xl font-bold text-slate-900 mb-4">Our Cybersecurity Delivery Rhythm</h3>
+            <div class="flex flex-wrap items-center gap-3 text-xs font-bold text-slate-700">
+              <span class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg">Assess</span>
+              <span>→</span>
+              <span class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg">Identify</span>
+              <span>→</span>
+              <span class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg">Remediate</span>
+              <span>→</span>
+              <span class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg">Validate</span>
+              <span>→</span>
+              <span class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg">Improve</span>
+            </div>
+            <button onclick="prefillContact('Cybersecurity Consulting')" class="mt-6 px-6 py-3 text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 rounded-lg shadow-xs">
+              Talk to a Cybersecurity Expert
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- VIEW 5: RISK MANAGEMENT                                       -->
+    <!-- ============================================================= -->
+    <div id="page-risk" class="page-view">
+      <section class="bg-gradient-to-b from-slate-50 to-white py-16 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Practice Area</span>
+          <h1 class="font-heading text-4xl sm:text-5xl font-extrabold text-slate-900 mt-2">Risk Management</h1>
+          <p class="text-xl font-bold text-amber-700 mt-2">Understand Risk. Prioritize Action. Build Resilience.</p>
+          <p class="text-sm text-slate-600 mt-3 max-w-3xl leading-relaxed">
+            Helping organizations identify, quantify, and govern technology, operational, and third-party risks through structured, business-aligned methodologies.
+          </p>
+        </div>
+      </section>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Enterprise Risk Assessment</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Evaluating macro-level organizational vulnerabilities and defining executive risk appetite thresholds.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">IT Risk Assessment</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Analyzing system availability, backup integrity, failover capability, and operational IT dependencies.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Cybersecurity Risk Assessment</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Targeted reviews of cyber attack surfaces, data exposure vectors, and ransomware resilience.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Risk Register Development</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Building dynamic, actionable risk registers customized to ISO 27001, SOC 2, and corporate governance.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Risk Treatment & Remediation</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Formulating practical mitigation plans, control enhancements, risk transference, and acceptance criteria.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Third-Party / Vendor Risk</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Assessing supplier security postures, vendor contracts, and sub-processor data protection compliance.</p>
+            </div>
+          </div>
+
+          <div class="p-8 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col md:flex-row items-center justify-between">
+            <div>
+              <h3 class="font-heading text-lg font-bold text-slate-900">Approach: Identify → Assess → Prioritize → Treat → Monitor</h3>
+              <p class="text-xs text-slate-600 mt-1">Transform risk management from a compliance checkbox into a strategic growth enabler.</p>
+            </div>
+            <button onclick="prefillContact('Risk Management')" class="mt-4 md:mt-0 px-6 py-3 text-sm font-bold text-white bg-amber-600 hover:bg-amber-700 rounded-lg shadow-xs">
+              Discuss Your Risk Requirements
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- VIEW 6: TECHNOLOGY CONSULTING                                 -->
+    <!-- ============================================================= -->
+    <div id="page-tech-consulting" class="page-view">
+      <section class="bg-gradient-to-b from-slate-50 to-white py-16 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Practice Area</span>
+          <h1 class="font-heading text-4xl sm:text-5xl font-extrabold text-slate-900 mt-2">Technology Consulting</h1>
+          <p class="text-xl font-bold text-blue-700 mt-2">Build Technology That Supports Growth.</p>
+          <p class="text-sm text-slate-600 mt-3 max-w-3xl leading-relaxed">
+            Practical technology strategy and engineering governance focused on commercial scalability, cloud adoption, and operational stability.
+          </p>
+        </div>
+      </section>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Technology Strategy</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Aligning digital architectures and software roadmaps with executive commercial objectives.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">IT Process Consulting</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Optimizing change management, incident handling, ticketing workflows, and IT service management.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Cloud Architecture Consulting</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Architecting secure, cost-optimized, and resilient multi-cloud and hybrid environments.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Azure Advisory</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Specialized advisory on Microsoft Azure infrastructure, identity governance (Entra ID), and security center posture.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Technology Risk</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Benchmarking technology obsolescence, single-points-of-failure, and scalability bottlenecks.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">IT Governance & Digital Transformation</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Establishing clear decision-making frameworks, vendor oversight, and smooth legacy migrations.</p>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button onclick="prefillContact('Technology Consulting')" class="px-6 py-3 text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-xs">
+              Discuss Your Technology Requirement
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- VIEW 7: HR & TALENT                                           -->
+    <!-- ============================================================= -->
+    <div id="page-hr-talent" class="page-view">
+      <section class="bg-gradient-to-b from-slate-50 to-white py-16 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Vertical 02</span>
+          <h1 class="font-heading text-4xl sm:text-5xl font-extrabold text-slate-900 mt-2">HR & Talent</h1>
+          <p class="text-xl font-bold text-emerald-700 mt-2">Build the Teams That Move Your Business Forward.</p>
+          <p class="text-sm text-slate-600 mt-3 max-w-3xl leading-relaxed">
+            HighVelocity Consulting helps organizations improve people practices, identify talent, and develop workforce capabilities aligned with commercial milestones.
+          </p>
+        </div>
+      </section>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          
+          <div class="p-8 border border-slate-200 rounded-2xl bg-slate-50/50">
+            <h3 class="font-heading text-2xl font-bold text-slate-900">HR Consulting</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">Practical support for organizations looking to establish, audit, or improve organizational HR processes and policies.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-4 text-xs text-slate-700">
+              <div>• HR process consulting</div>
+              <div>• HR policy development</div>
+              <div>• Process improvement</div>
+              <div>• Employee lifecycle</div>
+              <div>• HR documentation</div>
+              <div>• Organizational support</div>
+              <div>• Performance structures</div>
+              <div>• Regulatory compliance</div>
+            </div>
+            <button onclick="prefillContact('HR Consulting')" class="mt-6 px-5 py-2.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-xs">
+              Discuss Your HR Requirement
+            </button>
+          </div>
+
+          <div class="p-8 border border-slate-200 rounded-2xl bg-slate-50/50">
+            <h3 class="font-heading text-2xl font-bold text-slate-900">Recruitment & Talent Acquisition</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">Helping organizations identify, attract, and connect with the talent required to support business growth.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-4 text-xs text-slate-700">
+              <div>• Recruitment support</div>
+              <div>• Talent sourcing</div>
+              <div>• Candidate screening</div>
+              <div>• Technical hiring support</div>
+              <div>• Student / graduate hiring</div>
+              <div>• Talent pipeline design</div>
+              <div>• Competency assessments</div>
+              <div>• Executive coordination</div>
+            </div>
+            <button onclick="prefillContact('Recruitment')" class="mt-6 px-5 py-2.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-xs">
+              Tell Us What Talent You Need
+            </button>
+          </div>
+
+          <div class="p-8 border border-slate-200 rounded-2xl bg-slate-50/50">
+            <h3 class="font-heading text-2xl font-bold text-slate-900">Workforce Solutions</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">Strategic people solutions engineered to scale capability rather than simple manpower supply.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-4 text-xs text-slate-700">
+              <div>• Workforce planning</div>
+              <div>• Talent pipeline development</div>
+              <div>• Skill-gap identification</div>
+              <div>• Talent development</div>
+              <div>• Capability building</div>
+              <div>• Workforce retention</div>
+            </div>
+            <button onclick="prefillContact('Workforce Solutions')" class="mt-6 px-5 py-2.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-xs">
+              Plan Workforce Solutions
+            </button>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- VIEW 8: LEARNING & CAREER                                     -->
+    <!-- ============================================================= -->
+    <div id="page-learning" class="page-view">
+      <section class="bg-gradient-to-b from-slate-50 to-white py-16 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Vertical 03</span>
+          <h1 class="font-heading text-4xl sm:text-5xl font-extrabold text-slate-900 mt-2">Learning & Career</h1>
+          <p class="text-xl font-bold text-blue-700 mt-2">Learn. Apply. Become Industry-Ready.</p>
+          <p class="text-sm text-slate-600 mt-3 max-w-3xl leading-relaxed">
+            HighVelocity Consulting connects academic learning with practical exposure through structured internships, vocational technical training, and industry-readiness programs.
+          </p>
+        </div>
+      </section>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          
+          <div class="p-8 border border-slate-200 rounded-2xl bg-slate-50/50">
+            <h3 class="font-heading text-2xl font-bold text-slate-900">Student Internships</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">Turn Academic Learning Into Practical Experience. Gain hands-on exposure, structured mentoring, and workplace-oriented experience without false promises.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4 text-xs text-slate-700">
+              <div>• Practical enterprise projects</div>
+              <div>• Technical exposure</div>
+              <div>• Dedicated mentorship</div>
+              <div>• Professional workplace skills</div>
+              <div>• Industry-oriented learning</div>
+              <div>• Resume & portfolio guidance</div>
+            </div>
+            <button onclick="prefillContact('Student Internship')" class="mt-6 px-5 py-2.5 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-xs">
+              Explore Internship Opportunities
+            </button>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h4 class="font-bold text-slate-900 text-lg mb-2">Degree Student Programs</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">For students pursuing undergraduate or postgraduate degrees. Focuses on technical skills, live projects, professional workplace standards, and direct career preparation.</p>
+              <button onclick="prefillContact('Degree Student Programs')" class="text-xs font-bold text-blue-600 hover:underline">Learn More →</button>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h4 class="font-bold text-slate-900 text-lg mb-2">Pre-Degree Programs</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">For students preparing for higher education. Introduces foundational technology concepts, industry exposure, career path awareness, and practical problem solving.</p>
+              <button onclick="prefillContact('Pre-Degree Programs')" class="text-xs font-bold text-blue-600 hover:underline">Learn More →</button>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h4 class="font-bold text-slate-900 text-lg mb-2">Technical Training</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-3">Practical technical instruction covering software engineering, cloud architectures, Azure, APIs, databases, and cybersecurity essentials.</p>
+              <button onclick="prefillContact('Technical Training')" class="text-xs font-bold text-blue-600 hover:underline">Explore Technical Curriculum →</button>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h4 class="font-bold text-slate-900 text-lg mb-2">Industry Readiness</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-3">From Classroom to Career. Coaching on communication, professional etiquette, technical interview preparation, problem solving, and corporate collaboration.</p>
+              <button onclick="prefillContact('Industry Readiness')" class="text-xs font-bold text-blue-600 hover:underline">Become Industry-Ready →</button>
+            </div>
+          </div>
+
+          <div class="p-8 bg-brand-navy text-white rounded-2xl">
+            <h3 class="font-heading text-2xl font-bold text-white">Corporate Training for Organizations</h3>
+            <p class="text-xs text-slate-300 mt-2 max-w-2xl leading-relaxed">
+              Customized corporate upskilling programs covering technical tooling, cybersecurity awareness, compliance hygiene, and professional leadership development.
+            </p>
+            <button onclick="prefillContact('Corporate Training')" class="mt-6 px-6 py-3 text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 rounded-lg shadow-xs">
+              Plan Corporate Training
+            </button>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- VIEW 9: ABOUT US                                              -->
+    <!-- ============================================================= -->
+    <div id="page-about" class="page-view">
+      <section class="bg-gradient-to-b from-slate-50 to-white py-16 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-500">About HighVelocity Consulting</span>
+          <h1 class="font-heading text-4xl sm:text-5xl font-extrabold text-slate-900 mt-2">Building Stronger Businesses. <br>Developing Stronger People.</h1>
+          <p class="text-sm text-slate-600 mt-4 max-w-3xl leading-relaxed">
+            HighVelocity Consulting is a professional consulting and capability-development company helping organizations strengthen their technology, security, compliance, and people capabilities.
+          </p>
+        </div>
+      </section>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4 text-sm">
+            <p>
+              Alongside our advisory practices, we bridge the gap between academia and enterprise through practical technical training, verified internships, and industry-readiness programs.
+            </p>
+            <div class="p-6 bg-slate-50 border-l-4 border-brand-500 rounded-r-xl my-6">
+              <div class="text-xs font-bold uppercase tracking-widest text-slate-500">Our Fundamental Philosophy</div>
+              <p class="font-heading font-bold text-xl text-slate-900 mt-1">
+                “Business growth requires strong technology, effective processes and capable people.”
+              </p>
+            </div>
+            <p>
+              HighVelocity brings these capabilities together under one unified platform. We remove the operational fragmentation between technical compliance, cybersecurity defense, talent acquisition, and workforce education.
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-6 pt-6">
+            <div class="p-8 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-500">Our Purpose</span>
+              <h3 class="font-heading text-xl font-bold text-slate-900 mt-1">Our Mission</h3>
+              <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+                To help organizations and individuals build the capabilities they need to grow with confidence.
+              </p>
+            </div>
+            <div class="p-8 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-500">Our Destination</span>
+              <h3 class="font-heading text-xl font-bold text-slate-900 mt-1">Our Vision</h3>
+              <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+                To become a trusted consulting and talent-development partner connecting business capability, technology and people.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- VIEW 10: INSIGHTS (BLOG)                                      -->
+    <!-- ============================================================= -->
+    <div id="page-insights" class="page-view">
+      <section class="bg-gradient-to-b from-slate-50 to-white py-16 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-500">Perspectives</span>
+          <h1 class="font-heading text-4xl sm:text-5xl font-extrabold text-slate-900 mt-2">Insights</h1>
+          <p class="text-sm text-slate-600 mt-3">
+            Practical analyses covering cybersecurity, compliance, risk, technology, HR, recruitment, and career development.
+          </p>
+        </div>
+      </section>
+
+      <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid md:grid-cols-3 gap-6">
+            
+            <article class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-bold text-emerald-600 uppercase">Compliance</span>
+                <h3 class="font-heading font-bold text-lg text-slate-900 mt-2 leading-snug">What is ISO 27001 and When Does a Business Need It?</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">A practical analysis of how growing companies build an ISMS, satisfy customer procurement, and establish verified security controls.</p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400 font-medium">Practice Brief • Governance</div>
+            </article>
+
+            <article class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-bold text-emerald-600 uppercase">Compliance</span>
+                <h3 class="font-heading font-bold text-lg text-slate-900 mt-2 leading-snug">SOC 2 vs ISO 27001: Selecting the Right Path</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">Understanding customer expectations, regional market differences, and how to structure dual-compliance evidence collection.</p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400 font-medium">Practice Brief • Trust Criteria</div>
+            </article>
+
+            <article class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-bold text-brand-600 uppercase">Cybersecurity</span>
+                <h3 class="font-heading font-bold text-lg text-slate-900 mt-2 leading-snug">Preparing for an Enterprise Customer Security Assessment</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">How SaaS companies can streamline 200+ vendor questionnaires, assemble proof of controls, and eliminate sales friction.</p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400 font-medium">Practice Brief • Security</div>
+            </article>
+
+            <article class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-bold text-brand-600 uppercase">Cybersecurity</span>
+                <h3 class="font-heading font-bold text-lg text-slate-900 mt-2 leading-snug">Common Cybersecurity Gaps in Growing Businesses</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">Analyzing configuration oversights across cloud environments, API endpoints, IAM sprawl, and third-party SaaS tools.</p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400 font-medium">Practice Brief • Assessment</div>
+            </article>
+
+            <article class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-bold text-amber-600 uppercase">HR & Talent</span>
+                <h3 class="font-heading font-bold text-lg text-slate-900 mt-2 leading-snug">Building an Effective Internship Program That Adds Real Value</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">Designing structured enterprise workflows that give students authentic experience while strengthening corporate productivity.</p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400 font-medium">Workforce Brief • HR</div>
+            </article>
+
+            <article class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-bold text-blue-600 uppercase">Career Development</span>
+                <h3 class="font-heading font-bold text-lg text-slate-900 mt-2 leading-snug">Skills Students Need Before Entering the Technology Industry</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">Bridging the critical gap between conceptual university curricula and live enterprise engineering demands.</p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400 font-medium">Learning Brief • Readiness</div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- VIEW 11: CONTACT US                                           -->
+    <!-- ============================================================= -->
+    <div id="page-contact" class="page-view">
+      <section class="bg-gradient-to-b from-slate-50 to-white py-16 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-500">Initiate Advisory</span>
+          <h1 class="font-heading text-4xl sm:text-5xl font-extrabold text-slate-900 mt-2">Let's Build What Comes Next.</h1>
+          <p class="text-sm text-slate-600 mt-3 max-w-3xl leading-relaxed">
+            Tell us what you're trying to achieve. We'll help you identify the right path forward across Security, Risk & Governance, HR & Talent, or Learning & Career.
+          </p>
+        </div>
+      </section>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="border border-slate-200 rounded-2xl p-8 sm:p-10 bg-white shadow-xs">
+            
+            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+              
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="form-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Name *</label>
+                  <input type="text" id="form-name" required placeholder="Full Name" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none">
+                </div>
+                <div>
+                  <label for="form-company" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Company / Institution *</label>
+                  <input type="text" id="form-company" required placeholder="Organization Name" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none">
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="form-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Work Email *</label>
+                  <input type="email" id="form-email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none">
+                </div>
+                <div>
+                  <label for="form-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Phone</label>
+                  <input type="tel" id="form-phone" placeholder="Phone Number" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none">
+                </div>
+              </div>
+
+              <div>
+                <label for="form-country" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Country</label>
+                <input type="text" id="form-country" placeholder="e.g. India, United States, United Kingdom" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none">
+              </div>
+
+              <div>
+                <label for="form-interest" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Area of Interest *</label>
+                <select id="form-interest" required class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none bg-white">
+                  <option value="" disabled selected>Select an area of interest...</option>
+                  <option value="Security, Risk & Governance">Security, Risk & Governance</option>
+                  <option value="Cybersecurity Consulting">Cybersecurity Consulting</option>
+                  <option value="Compliance & Governance">Compliance & Governance</option>
+                  <option value="ISO 27001">ISO 27001</option>
+                  <option value="SOC 2">SOC 2</option>
+                  <option value="PCI DSS">PCI DSS</option>
+                  <option value="GDPR & Privacy">GDPR & Privacy</option>
+                  <option value="Risk Management">Risk Management</option>
+                  <option value="Internal Audit">Internal Audit</option>
+                  <option value="Technology Consulting">Technology Consulting</option>
+                  <option value="HR Consulting">HR Consulting</option>
+                  <option value="Recruitment">Recruitment</option>
+                  <option value="Talent Acquisition">Talent Acquisition</option>
+                  <option value="Workforce Solutions">Workforce Solutions</option>
+                  <option value="Student Internship">Student Internship</option>
+                  <option value="Degree Student Programs">Degree Student Programs</option>
+                  <option value="Pre-Degree Programs">Pre-Degree Programs</option>
+                  <option value="Technical Training">Technical Training</option>
+                  <option value="Industry Readiness">Industry Readiness</option>
+                  <option value="Corporate Training">Corporate Training</option>
+                  <option value="Career Development">Career Development</option>
+                  <option value="Other / Not Sure">Other / Not Sure</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="form-message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Requirement / Message *</label>
+                <textarea id="form-message" rows="4" required placeholder="Tell us about your objectives, current timeline, or framework requirements..." class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 px-6 text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 rounded-lg shadow-xs transition-all text-center">
+                Send Requirement
+              </button>
+
+            </form>
+
+            <div id="formSuccessMessage" class="hidden text-center py-12 space-y-4">
+              <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto"><i data-lucide="check" class="w-6 h-6"></i></div>
+              <h3 class="font-heading text-xl font-bold text-slate-900">Requirement Received</h3>
+              <p class="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
+                Thank you. Our consulting team will review your requirement and reach out directly.
+              </p>
+              <button onclick="resetContactForm()" class="text-xs font-bold text-brand-500 hover:underline">Submit another requirement</button>
+            </div>
+
+          </div>
+
+          <div class="mt-8 text-center text-xs text-slate-500">
+            Confidential B2B Engagements • HighVelocity Consulting • highvelocityconsulting.in
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- ================= COMPREHENSIVE FOOTER ================= -->
+  <footer class="bg-brand-navy text-white border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+        
+        <!-- Brand Info -->
+        <div class="md:col-span-2 space-y-3">
+          <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded-lg bg-brand-500 flex items-center justify-center text-white">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7v8l10-12h-7V2z"/></svg>
+            </div>
+            <span class="font-heading font-extrabold text-base tracking-tight">HIGHVELOCITY CONSULTING</span>
+          </div>
+          <p class="text-xs font-semibold text-brand-200">Security • Risk • People</p>
+          <p class="text-xs text-slate-400">Accelerating Businesses. Developing People.</p>
+          <p class="text-xs text-slate-400 max-w-sm pt-2 leading-relaxed">
+            A professional consulting and capability-development company connecting cybersecurity architecture, compliance, risk governance, HR, and talent readiness.
+          </p>
+        </div>
+
+        <!-- Col 1: Security, Risk & Governance -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Security & Risk</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><button onclick="navigateTo('cybersecurity')" class="hover:text-white transition-colors">Cybersecurity</button></li>
+            <li><button onclick="navigateTo('compliance')" class="hover:text-white transition-colors">Compliance & Governance</button></li>
+            <li><button onclick="navigateTo('compliance')" class="hover:text-white transition-colors">ISO 27001 & SOC 2</button></li>
+            <li><button onclick="navigateTo('compliance')" class="hover:text-white transition-colors">PCI DSS & GDPR</button></li>
+            <li><button onclick="navigateTo('risk')" class="hover:text-white transition-colors">Risk Management</button></li>
+            <li><button onclick="navigateTo('tech-consulting')" class="hover:text-white transition-colors">Technology Consulting</button></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: HR & Talent -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">HR & Talent</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><button onclick="navigateTo('hr-talent')" class="hover:text-white transition-colors">HR Consulting</button></li>
+            <li><button onclick="navigateTo('hr-talent')" class="hover:text-white transition-colors">Recruitment</button></li>
+            <li><button onclick="navigateTo('hr-talent')" class="hover:text-white transition-colors">Talent Acquisition</button></li>
+            <li><button onclick="navigateTo('hr-talent')" class="hover:text-white transition-colors">Workforce Solutions</button></li>
+            <li><button onclick="navigateTo('hr-talent')" class="hover:text-white transition-colors">Workforce Planning</button></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Learning & Company -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Learning & Career</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><button onclick="navigateTo('learning')" class="hover:text-white transition-colors">Internships</button></li>
+            <li><button onclick="navigateTo('learning')" class="hover:text-white transition-colors">Student Programs</button></li>
+            <li><button onclick="navigateTo('learning')" class="hover:text-white transition-colors">Technical Training</button></li>
+            <li><button onclick="navigateTo('learning')" class="hover:text-white transition-colors">Industry Readiness</button></li>
+            <li><button onclick="navigateTo('learning')" class="hover:text-white transition-colors">Corporate Training</button></li>
+            <li class="pt-2 border-t border-slate-800"><button onclick="navigateTo('about')" class="hover:text-white transition-colors">About Us</button></li>
+            <li><button onclick="navigateTo('insights')" class="hover:text-white transition-colors">Insights</button></li>
+            <li><button onclick="navigateTo('contact')" class="hover:text-white transition-colors">Contact</button></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-12 pt-6 border-t border-slate-800 text-[11px] text-slate-500 flex flex-col sm:flex-row items-center justify-between">
+        <div>&copy; 2026 HighVelocity Consulting. All rights reserved.</div>
+        <div class="flex gap-4 mt-2 sm:mt-0">
+          <span class="hover:text-slate-400 cursor-pointer" onclick="alert('Client information is governed under strict non-disclosure and privacy protocols.')">Privacy Policy</span>
+          <span class="hover:text-slate-400 cursor-pointer" onclick="alert('Consulting advisory is conducted under formalized statement-of-work agreements.')">Terms & Conditions</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= LOGIC & ROUTING CONTROLLER ================= -->
+  <script>
+    function navigateTo(pageId) {
+      const views = document.querySelectorAll('.page-view');
+      views.forEach(v => v.classList.remove('active'));
+
+      const target = document.getElementById(`page-${pageId}`);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        if (btn.getAttribute('data-page') === pageId) {
+          btn.classList.add('text-brand-500', 'font-bold');
+          btn.classList.remove('text-slate-700');
+        } else {
+          btn.classList.remove('text-brand-500', 'font-bold');
+          btn.classList.add('text-slate-700');
+        }
+      });
+
+      window.location.hash = pageId;
+    }
+
+    const mobileMenu = document.getElementById('mobileMenu');
+    document.getElementById('mobileMenuToggle').addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function toggleMobileMenu() {
+      mobileMenu.classList.add('hidden');
+    }
+
+    function toggleAccordion(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('hidden');
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function prefillContact(serviceVal) {
+      navigateTo('contact');
+      setTimeout(() => {
+        const select = document.getElementById('form-interest');
+        if (select) {
+          for (let i = 0; i < select.options.length; i++) {
+            if (select.options[i].value === serviceVal) {
+              select.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }, 50);
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').classList.add('hidden');
+      document.getElementById('formSuccessMessage').classList.remove('hidden');
+    }
+
+    function resetContactForm() {
+      document.getElementById('contactForm').reset();
+      document.getElementById('contactForm').classList.remove('hidden');
+      document.getElementById('formSuccessMessage').classList.add('hidden');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const initialHash = window.location.hash.replace('#', '');
+      const validPages = [
+        'home', 'security-gov', 'compliance', 'cybersecurity', 'risk', 
+        'tech-consulting', 'hr-talent', 'learning', 'about', 'insights', 'contact'
+      ];
+      if (validPages.includes(initialHash)) {
+        navigateTo(initialHash);
+      } else {
+        navigateTo('home');
+      }
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
