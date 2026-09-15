@@ -52,7 +52,7 @@
     .mega-menu {
       visibility: hidden;
       opacity: 0;
-      transform: translateY(8px);
+      transform: translateY(6px);
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       pointer-events: none;
     }
@@ -63,19 +63,22 @@
       transform: translateY(0);
       pointer-events: auto;
     }
-    .dropdown-link {
+    .dropdown-pill {
       display: block;
-      padding: 0.35rem 0.6rem;
-      border-radius: 0.375rem;
-      font-size: 0.8125rem;
+      padding: 0.35rem 0.55rem;
+      font-size: 0.8rem;
       color: #475569;
       font-weight: 500;
-      transition: all 0.15s;
+      border-radius: 0.375rem;
+      cursor: default;
+      user-select: none;
     }
-    .dropdown-link:hover {
-      background-color: #f1f5f9;
-      color: #0284c7;
-      padding-left: 0.85rem;
+    .mobile-item-text {
+      display: block;
+      padding: 0.25rem 0;
+      color: #475569;
+      cursor: default;
+      user-select: none;
     }
   </style>
 </head>
@@ -106,86 +109,73 @@
           </div>
         </a>
 
-        <!-- Desktop Navigation with Mega-Menus -->
+        <!-- Desktop Navigation with Crisp, Minimalist Dropdowns -->
         <nav class="hidden lg:flex items-center space-x-1">
           
           <button onclick="navigateTo('home')" class="nav-btn px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-500 rounded-md transition-colors" data-page="home">Home</button>
 
-          <!-- 01 SECURITY, RISK & GOVERNANCE MEGA-MENU -->
+          <!-- 01 SECURITY, RISK & GOVERNANCE COMPACT MENU -->
           <div class="has-dropdown relative">
-            <button onclick="navigateTo('security-gov')" class="nav-btn flex items-center gap-1 px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-500 rounded-md transition-colors" data-page="security-gov">
-              Security, Risk & Governance <i data-lucide="chevron-down" class="w-4 h-4 opacity-60"></i>
+            <button onclick="navigateTo('security-gov')" class="nav-btn flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-500 rounded-md transition-colors" data-page="security-gov">
+              Security, Risk & Governance <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-60"></i>
             </button>
-            <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full w-[940px] bg-white border border-slate-200 rounded-xl shadow-2xl p-6 grid grid-cols-4 gap-6 mt-1 z-50">
+            
+            <!-- Sleek, centered 4-pillar overview -->
+            <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full w-[780px] bg-white border border-slate-200 rounded-xl shadow-xl p-5 grid grid-cols-4 gap-4 mt-1 z-50">
               
-              <!-- Column A: Cybersecurity Strategy -->
-              <div>
-                <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-100">
+              <!-- Column 1: Cybersecurity -->
+              <div class="bg-slate-50/60 p-3.5 rounded-lg border border-slate-100">
+                <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-200/80">
                   <i data-lucide="shield-check" class="w-4 h-4 text-brand-500"></i>
                   <span class="text-xs font-bold uppercase tracking-wider text-slate-900">Cybersecurity</span>
                 </div>
-                <div class="space-y-0.5">
-                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">Cybersecurity Consulting</a>
-                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">Security Gap Assessment</a>
-                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">Technical Controls Review</a>
-                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">Application Architecture</a>
-                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">API & Cloud Security Review</a>
-                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">Infrastructure Security</a>
-                  <a href="#cybersecurity" onclick="navigateTo('cybersecurity')" class="dropdown-link">Security Posture Audit</a>
+                <div class="space-y-1">
+                  <span class="dropdown-pill font-medium text-slate-800">Security Consulting</span>
+                  <span class="dropdown-pill">Gap Assessments</span>
+                  <span class="dropdown-pill">Cloud & API Defense</span>
+                  <span class="dropdown-pill">Controls Review</span>
                 </div>
               </div>
 
-              <!-- Column B: Compliance & Governance -->
-              <div>
-                <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-100">
+              <!-- Column 2: Compliance & Governance -->
+              <div class="bg-slate-50/60 p-3.5 rounded-lg border border-slate-100">
+                <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-200/80">
                   <i data-lucide="file-check-2" class="w-4 h-4 text-emerald-600"></i>
-                  <span class="text-xs font-bold uppercase tracking-wider text-slate-900">Compliance & Gov</span>
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-900">Compliance</span>
                 </div>
-                <div class="space-y-0.5">
-                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link font-semibold text-slate-900">ISO 27001 (ISMS)</a>
-                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link font-semibold text-slate-900">SOC 2 (Type I & II)</a>
-                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link font-semibold text-slate-900">PCI DSS 4.0</a>
-                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link font-semibold text-slate-900">GDPR & Data Privacy</a>
-                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Compliance Gap Assessment</a>
-                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Risk & Compliance Consulting</a>
-                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Internal Audit</a>
-                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Control Assessment</a>
-                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Policy & Documentation</a>
-                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Audit Readiness</a>
-                  <a href="#compliance" onclick="navigateTo('compliance')" class="dropdown-link">Evidence Management</a>
+                <div class="space-y-1">
+                  <span class="dropdown-pill font-semibold text-slate-900">ISO 27001 (ISMS)</span>
+                  <span class="dropdown-pill font-semibold text-slate-900">SOC 2 (Type I & II)</span>
+                  <span class="dropdown-pill font-semibold text-slate-900">PCI DSS 4.0 & GDPR</span>
+                  <span class="dropdown-pill">Audit & Evidence Prep</span>
                 </div>
               </div>
 
-              <!-- Column C: Risk Management -->
-              <div>
-                <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-100">
+              <!-- Column 3: Risk Management -->
+              <div class="bg-slate-50/60 p-3.5 rounded-lg border border-slate-100">
+                <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-200/80">
                   <i data-lucide="alert-octagon" class="w-4 h-4 text-amber-600"></i>
-                  <span class="text-xs font-bold uppercase tracking-wider text-slate-900">Risk Management</span>
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-900">Risk & Audit</span>
                 </div>
-                <div class="space-y-0.5">
-                  <a href="#risk" onclick="navigateTo('risk')" class="dropdown-link">Enterprise Risk Assessment</a>
-                  <a href="#risk" onclick="navigateTo('risk')" class="dropdown-link">IT Risk Assessment</a>
-                  <a href="#risk" onclick="navigateTo('risk')" class="dropdown-link">Cyber Risk Assessment</a>
-                  <a href="#risk" onclick="navigateTo('risk')" class="dropdown-link">Risk Register Development</a>
-                  <a href="#risk" onclick="navigateTo('risk')" class="dropdown-link">Risk Treatment & Remediation</a>
-                  <a href="#risk" onclick="navigateTo('risk')" class="dropdown-link">Third-Party / Vendor Risk</a>
+                <div class="space-y-1">
+                  <span class="dropdown-pill font-medium text-slate-800">Enterprise Risk</span>
+                  <span class="dropdown-pill">IT & Cyber Risk</span>
+                  <span class="dropdown-pill">Risk Registers</span>
+                  <span class="dropdown-pill">Third-Party Risk</span>
                 </div>
               </div>
 
-              <!-- Column D: Technology Consulting -->
-              <div>
-                <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-100">
+              <!-- Column 4: Technology Consulting -->
+              <div class="bg-slate-50/60 p-3.5 rounded-lg border border-slate-100">
+                <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-200/80">
                   <i data-lucide="cpu" class="w-4 h-4 text-blue-600"></i>
-                  <span class="text-xs font-bold uppercase tracking-wider text-slate-900">Tech Consulting</span>
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-900">Tech Advisory</span>
                 </div>
-                <div class="space-y-0.5">
-                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">Technology Strategy</a>
-                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">IT Process Consulting</a>
-                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">Cloud Architecture Review</a>
-                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">Azure Advisory</a>
-                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">Technology Risk</a>
-                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">IT Governance</a>
-                  <a href="#tech-consulting" onclick="navigateTo('tech-consulting')" class="dropdown-link">Digital Transformation</a>
+                <div class="space-y-1">
+                  <span class="dropdown-pill font-medium text-slate-800">Technology Strategy</span>
+                  <span class="dropdown-pill">Cloud Architecture</span>
+                  <span class="dropdown-pill">Azure Advisory</span>
+                  <span class="dropdown-pill">IT Governance</span>
                 </div>
               </div>
 
@@ -194,33 +184,29 @@
 
           <!-- 02 HR & TALENT DROPDOWN -->
           <div class="has-dropdown relative">
-            <button onclick="navigateTo('hr-talent')" class="nav-btn flex items-center gap-1 px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-500 rounded-md transition-colors" data-page="hr-talent">
-              HR & Talent <i data-lucide="chevron-down" class="w-4 h-4 opacity-60"></i>
+            <button onclick="navigateTo('hr-talent')" class="nav-btn flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-500 rounded-md transition-colors" data-page="hr-talent">
+              HR & Talent <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-60"></i>
             </button>
-            <div class="mega-menu absolute left-0 top-full w-72 bg-white border border-slate-200 rounded-xl shadow-2xl p-4 mt-1 z-50 space-y-1">
-              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link font-semibold text-slate-900">HR Consulting</a>
-              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link">Talent Acquisition</a>
-              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link">Recruitment Support</a>
-              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link">Workforce Solutions</a>
-              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link">Workforce Planning</a>
-              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link">HR Process Development</a>
-              <a href="#hr-talent" onclick="navigateTo('hr-talent')" class="dropdown-link">Talent Development</a>
+            <div class="mega-menu absolute left-0 top-full w-64 bg-white border border-slate-200 rounded-xl shadow-xl p-3.5 mt-1 z-50 space-y-1">
+              <span class="dropdown-pill font-semibold text-slate-900">HR Consulting</span>
+              <span class="dropdown-pill">Talent Acquisition</span>
+              <span class="dropdown-pill">Recruitment Support</span>
+              <span class="dropdown-pill">Workforce Planning</span>
+              <span class="dropdown-pill">Process Development</span>
             </div>
           </div>
 
           <!-- 03 LEARNING & CAREER DROPDOWN -->
           <div class="has-dropdown relative">
-            <button onclick="navigateTo('learning')" class="nav-btn flex items-center gap-1 px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-500 rounded-md transition-colors" data-page="learning">
-              Learning & Career <i data-lucide="chevron-down" class="w-4 h-4 opacity-60"></i>
+            <button onclick="navigateTo('learning')" class="nav-btn flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-500 rounded-md transition-colors" data-page="learning">
+              Learning & Career <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-60"></i>
             </button>
-            <div class="mega-menu absolute left-0 top-full w-72 bg-white border border-slate-200 rounded-xl shadow-2xl p-4 mt-1 z-50 space-y-1">
-              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link font-semibold text-slate-900">Student Internships</a>
-              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link">Degree Student Programs</a>
-              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link">Pre-Degree Programs</a>
-              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link">Technical Training</a>
-              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link">Industry Readiness</a>
-              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link">Corporate Training</a>
-              <a href="#learning" onclick="navigateTo('learning')" class="dropdown-link">Career Development</a>
+            <div class="mega-menu absolute left-0 top-full w-64 bg-white border border-slate-200 rounded-xl shadow-xl p-3.5 mt-1 z-50 space-y-1">
+              <span class="dropdown-pill font-semibold text-slate-900">Student Internships</span>
+              <span class="dropdown-pill">Degree Student Programs</span>
+              <span class="dropdown-pill">Technical Training</span>
+              <span class="dropdown-pill">Industry Readiness</span>
+              <span class="dropdown-pill">Corporate Upskilling</span>
             </div>
           </div>
 
@@ -251,55 +237,53 @@
       
       <!-- Mobile Security & Governance Accordion -->
       <div class="border-t border-slate-100 pt-2">
-        <button onclick="toggleAccordion('mobile-sec-gov')" class="flex items-center justify-between w-full px-3 py-2 font-bold text-slate-900 hover:bg-slate-50 rounded-md">
-          <span>Security, Risk & Governance</span>
-          <i data-lucide="chevron-down" class="w-4 h-4"></i>
-        </button>
+        <div class="flex items-center justify-between w-full px-3 py-2 font-bold text-slate-900 hover:bg-slate-50 rounded-md">
+          <button onclick="navigateTo('security-gov'); toggleMobileMenu()" class="text-left flex-grow">Security, Risk & Governance</button>
+          <button onclick="toggleAccordion('mobile-sec-gov')" class="p-1 text-slate-500"><i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+        </div>
         <div id="mobile-sec-gov" class="hidden pl-4 pr-2 py-2 space-y-3 bg-slate-50/70 rounded-lg text-xs">
           <div>
             <div class="font-bold text-brand-600 uppercase tracking-wider mb-1">Cybersecurity</div>
-            <a href="#cybersecurity" onclick="navigateTo('cybersecurity'); toggleMobileMenu()" class="block py-1 text-slate-700">Security Consulting & Gap Assessments</a>
+            <span class="mobile-item-text">Consulting, Gap Assessments & Cloud Security</span>
           </div>
           <div>
             <div class="font-bold text-emerald-700 uppercase tracking-wider mb-1">Compliance & Governance</div>
-            <a href="#compliance" onclick="navigateTo('compliance'); toggleMobileMenu()" class="block py-1 text-slate-700 font-semibold">ISO 27001, SOC 2, PCI DSS, GDPR</a>
-            <a href="#compliance" onclick="navigateTo('compliance'); toggleMobileMenu()" class="block py-1 text-slate-700">Internal Audit & Evidence Management</a>
+            <span class="mobile-item-text font-semibold">ISO 27001, SOC 2, PCI DSS, GDPR</span>
           </div>
           <div>
             <div class="font-bold text-amber-700 uppercase tracking-wider mb-1">Risk Management</div>
-            <a href="#risk" onclick="navigateTo('risk'); toggleMobileMenu()" class="block py-1 text-slate-700">Enterprise, IT & Third-Party Risk</a>
+            <span class="mobile-item-text">Enterprise, IT & Vendor Risk Registers</span>
           </div>
           <div>
             <div class="font-bold text-blue-700 uppercase tracking-wider mb-1">Technology Consulting</div>
-            <a href="#tech-consulting" onclick="navigateTo('tech-consulting'); toggleMobileMenu()" class="block py-1 text-slate-700">Cloud Architecture & IT Governance</a>
+            <span class="mobile-item-text">Cloud Architecture, Azure & IT Governance</span>
           </div>
         </div>
       </div>
 
       <!-- Mobile HR & Talent Accordion -->
       <div class="border-t border-slate-100 pt-2">
-        <button onclick="toggleAccordion('mobile-hr')" class="flex items-center justify-between w-full px-3 py-2 font-bold text-slate-900 hover:bg-slate-50 rounded-md">
-          <span>HR & Talent</span>
-          <i data-lucide="chevron-down" class="w-4 h-4"></i>
-        </button>
+        <div class="flex items-center justify-between w-full px-3 py-2 font-bold text-slate-900 hover:bg-slate-50 rounded-md">
+          <button onclick="navigateTo('hr-talent'); toggleMobileMenu()" class="text-left flex-grow">HR & Talent</button>
+          <button onclick="toggleAccordion('mobile-hr')" class="p-1 text-slate-500"><i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+        </div>
         <div id="mobile-hr" class="hidden pl-4 pr-2 py-2 space-y-1 bg-slate-50/70 rounded-lg text-xs">
-          <a href="#hr-talent" onclick="navigateTo('hr-talent'); toggleMobileMenu()" class="block py-1 text-slate-700 font-semibold">HR Consulting</a>
-          <a href="#hr-talent" onclick="navigateTo('hr-talent'); toggleMobileMenu()" class="block py-1 text-slate-700">Talent Acquisition & Recruitment</a>
-          <a href="#hr-talent" onclick="navigateTo('hr-talent'); toggleMobileMenu()" class="block py-1 text-slate-700">Workforce Planning & Capability</a>
+          <span class="mobile-item-text font-semibold">HR Consulting</span>
+          <span class="mobile-item-text">Talent Acquisition & Recruitment</span>
+          <span class="mobile-item-text">Workforce Planning & Capability</span>
         </div>
       </div>
 
       <!-- Mobile Learning Accordion -->
       <div class="border-t border-slate-100 pt-2">
-        <button onclick="toggleAccordion('mobile-learning')" class="flex items-center justify-between w-full px-3 py-2 font-bold text-slate-900 hover:bg-slate-50 rounded-md">
-          <span>Learning & Career</span>
-          <i data-lucide="chevron-down" class="w-4 h-4"></i>
-        </button>
+        <div class="flex items-center justify-between w-full px-3 py-2 font-bold text-slate-900 hover:bg-slate-50 rounded-md">
+          <button onclick="navigateTo('learning'); toggleMobileMenu()" class="text-left flex-grow">Learning & Career</button>
+          <button onclick="toggleAccordion('mobile-learning')" class="p-1 text-slate-500"><i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+        </div>
         <div id="mobile-learning" class="hidden pl-4 pr-2 py-2 space-y-1 bg-slate-50/70 rounded-lg text-xs">
-          <a href="#learning" onclick="navigateTo('learning'); toggleMobileMenu()" class="block py-1 text-slate-700 font-semibold">Student Internships</a>
-          <a href="#learning" onclick="navigateTo('learning'); toggleMobileMenu()" class="block py-1 text-slate-700">Degree & Pre-Degree Programs</a>
-          <a href="#learning" onclick="navigateTo('learning'); toggleMobileMenu()" class="block py-1 text-slate-700">Technical & Corporate Training</a>
-          <a href="#learning" onclick="navigateTo('learning'); toggleMobileMenu()" class="block py-1 text-slate-700">Industry Readiness</a>
+          <span class="mobile-item-text font-semibold">Student Internships</span>
+          <span class="mobile-item-text">Degree & Pre-Degree Programs</span>
+          <span class="mobile-item-text">Technical & Corporate Training</span>
         </div>
       </div>
 
@@ -472,12 +456,12 @@
                   </div>
                 </div>
                 <div class="mt-6 lg:mt-0 lg:max-w-xl w-full grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                  <div onclick="navigateTo('compliance'); prefillContact('ISO 27001')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">ISO 27001 ISMS</div>
-                  <div onclick="navigateTo('compliance'); prefillContact('SOC 2')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">SOC 2 Readiness</div>
-                  <div onclick="navigateTo('compliance'); prefillContact('PCI DSS')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">PCI DSS 4.0</div>
-                  <div onclick="navigateTo('compliance'); prefillContact('GDPR & Privacy')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">GDPR & Privacy</div>
-                  <div onclick="navigateTo('cybersecurity'); prefillContact('Cybersecurity Consulting')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">Security Gap Review</div>
-                  <div onclick="navigateTo('risk'); prefillContact('Risk Management')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">Enterprise Risk</div>
+                  <div onclick="navigateTo('compliance')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">ISO 27001 ISMS</div>
+                  <div onclick="navigateTo('compliance')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">SOC 2 Readiness</div>
+                  <div onclick="navigateTo('compliance')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">PCI DSS 4.0</div>
+                  <div onclick="navigateTo('compliance')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">GDPR & Privacy</div>
+                  <div onclick="navigateTo('cybersecurity')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">Security Gap Review</div>
+                  <div onclick="navigateTo('risk')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-brand-500 cursor-pointer transition-colors">Enterprise Risk</div>
                 </div>
               </div>
             </div>
@@ -499,12 +483,12 @@
                   </div>
                 </div>
                 <div class="mt-6 lg:mt-0 lg:max-w-xl w-full grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                  <div onclick="navigateTo('hr-talent'); prefillContact('HR Consulting')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">HR Consulting</div>
-                  <div onclick="navigateTo('hr-talent'); prefillContact('Talent Acquisition')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">Talent Acquisition</div>
-                  <div onclick="navigateTo('hr-talent'); prefillContact('Recruitment')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">Recruitment Support</div>
-                  <div onclick="navigateTo('hr-talent'); prefillContact('Workforce Solutions')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">Workforce Planning</div>
-                  <div onclick="navigateTo('hr-talent'); prefillContact('HR Consulting')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">HR Process Design</div>
-                  <div onclick="navigateTo('hr-talent'); prefillContact('Workforce Solutions')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">Talent Programs</div>
+                  <div onclick="navigateTo('hr-talent')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">HR Consulting</div>
+                  <div onclick="navigateTo('hr-talent')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">Talent Acquisition</div>
+                  <div onclick="navigateTo('hr-talent')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">Recruitment Support</div>
+                  <div onclick="navigateTo('hr-talent')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">Workforce Planning</div>
+                  <div onclick="navigateTo('hr-talent')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">HR Process Design</div>
+                  <div onclick="navigateTo('hr-talent')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-emerald-500 cursor-pointer transition-colors">Talent Programs</div>
                 </div>
               </div>
             </div>
@@ -512,27 +496,25 @@
             <!-- 03 Learning & Career -->
             <div class="border border-slate-200 rounded-2xl p-8 bg-gradient-to-r from-slate-50 via-white to-white">
               <div class="lg:flex lg:items-start lg:justify-between">
-                <div class="lg:max-w-md">
-                  <div class="text-xs font-bold tracking-widest uppercase text-blue-600 mb-1">Vertical 03</div>
-                  <h3 class="font-heading text-2xl font-bold text-slate-900">LEARNING & CAREER</h3>
-                  <p class="text-sm font-semibold text-slate-700 mt-1">Learn. Apply. Become Industry-Ready.</p>
-                  <p class="text-xs text-slate-500 mt-3 leading-relaxed">
-                    Bridging university education with practical enterprise requirements through internships, degree programs, and corporate upskilling.
-                  </p>
-                  <div class="mt-6">
-                    <button onclick="navigateTo('learning')" class="inline-flex items-center text-sm font-bold text-blue-700 hover:text-blue-800">
-                      Explore Learning & Career →
-                    </button>
-                  </div>
+                <div class="text-xs font-bold tracking-widest uppercase text-blue-600 mb-1">Vertical 03</div>
+                <h3 class="font-heading text-2xl font-bold text-slate-900">LEARNING & CAREER</h3>
+                <p class="text-sm font-semibold text-slate-700 mt-1">Learn. Apply. Become Industry-Ready.</p>
+                <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+                  Bridging university education with practical enterprise requirements through internships, degree programs, and corporate upskilling.
+                </p>
+                <div class="mt-6">
+                  <button onclick="navigateTo('learning')" class="inline-flex items-center text-sm font-bold text-blue-700 hover:text-blue-800">
+                    Explore Learning & Career →
+                  </button>
                 </div>
-                <div class="mt-6 lg:mt-0 lg:max-w-xl w-full grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                  <div onclick="navigateTo('learning'); prefillContact('Student Internship')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Student Internships</div>
-                  <div onclick="navigateTo('learning'); prefillContact('Degree Student Programs')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Degree Programs</div>
-                  <div onclick="navigateTo('learning'); prefillContact('Technical Training')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Technical Training</div>
-                  <div onclick="navigateTo('learning'); prefillContact('Industry Readiness')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Industry Readiness</div>
-                  <div onclick="navigateTo('learning'); prefillContact('Corporate Training')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Corporate Training</div>
-                  <div onclick="navigateTo('learning'); prefillContact('Career Development')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Career Mentorship</div>
-                </div>
+              </div>
+              <div class="mt-6 lg:mt-0 lg:max-w-xl w-full grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                <div onclick="navigateTo('learning')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Student Internships</div>
+                <div onclick="navigateTo('learning')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Degree Programs</div>
+                <div onclick="navigateTo('learning')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Technical Training</div>
+                <div onclick="navigateTo('learning')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Industry Readiness</div>
+                <div onclick="navigateTo('learning')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Corporate Training</div>
+                <div onclick="navigateTo('learning')" class="p-3 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-800 hover:border-blue-500 cursor-pointer transition-colors">Career Mentorship</div>
               </div>
             </div>
 
@@ -632,7 +614,7 @@
     </div>
 
     <!-- ============================================================= -->
-    <!-- VIEW 2: SECURITY, RISK & GOVERNANCE (REPLACED BIZ & TECH)    -->
+    <!-- VIEW 2: SECURITY, RISK & GOVERNANCE (LANDING)                 -->
     <!-- ============================================================= -->
     <div id="page-security-gov" class="page-view">
       <section class="bg-gradient-to-b from-slate-50 to-white py-16 border-b border-slate-200">
@@ -857,6 +839,11 @@
               <button onclick="prefillContact('Compliance & Governance')" class="text-xs font-bold text-brand-600 hover:underline">Inquire →</button>
             </div>
             <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Risk & Compliance Consulting</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">Advisory aligning organizational risk registers with corporate governance objectives and regulatory mandates.</p>
+              <button onclick="prefillContact('Compliance & Governance')" class="text-xs font-bold text-brand-600 hover:underline">Inquire →</button>
+            </div>
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs">
               <h4 class="font-bold text-slate-900 text-sm mb-1">Internal Audit</h4>
               <p class="text-xs text-slate-600 leading-relaxed mb-4">Independent review of processes, controls, and evidence repositories prior to external auditor engagement.</p>
               <button onclick="prefillContact('Internal Audit')" class="text-xs font-bold text-brand-600 hover:underline">Inquire →</button>
@@ -876,9 +863,9 @@
               <p class="text-xs text-slate-600 leading-relaxed mb-4">Prepare personnel, documentation, and evidence trails for customer, regulatory, or certification audits.</p>
               <button onclick="prefillContact('Compliance & Governance')" class="text-xs font-bold text-brand-600 hover:underline">Inquire →</button>
             </div>
-            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs">
+            <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-xs md:col-span-3">
               <h4 class="font-bold text-slate-900 text-sm mb-1">Evidence & Compliance Management</h4>
-              <p class="text-xs text-slate-600 leading-relaxed mb-4">Establish continuous automated workflows for capturing and maintaining audit evidence year-round.</p>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">Establish continuous automated workflows for capturing and maintaining audit evidence year-round without manual fatigue.</p>
               <button onclick="prefillContact('Compliance & Governance')" class="text-xs font-bold text-brand-600 hover:underline">Inquire →</button>
             </div>
           </div>
@@ -888,7 +875,7 @@
     </div>
 
     <!-- ============================================================= -->
-    <!-- VIEW 4: CYBERSECURITY CONSULTING (NO VAPT)                    -->
+    <!-- VIEW 4: CYBERSECURITY CONSULTING                              -->
     <!-- ============================================================= -->
     <div id="page-cybersecurity" class="page-view">
       <section class="bg-gradient-to-b from-slate-50 to-white py-16 border-b border-slate-200">
@@ -906,6 +893,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid md:grid-cols-3 gap-6 mb-12">
             <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Cybersecurity Consulting</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">High-level strategic guidance helping executives translate business goals into a structured, defensible cybersecurity posture.</p>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
               <h3 class="font-bold text-slate-900 text-base mb-2">Security Gap Assessment</h3>
               <p class="text-xs text-slate-600 leading-relaxed">Comprehensive reviews of firewalls, IAM, multi-factor authentication, endpoint controls, and baseline security posture.</p>
             </div>
@@ -914,19 +905,19 @@
               <p class="text-xs text-slate-600 leading-relaxed">Validating the configuration and operational effectiveness of backup routines, logging, and incident response readiness.</p>
             </div>
             <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
-              <h3 class="font-bold text-slate-900 text-base mb-2">Application Security Architecture</h3>
+              <h3 class="font-bold text-slate-900 text-base mb-2">Application Architecture</h3>
               <p class="text-xs text-slate-600 leading-relaxed">Secure development lifecycle reviews, CI/CD pipeline security gates, and OWASP design standards mitigation.</p>
             </div>
             <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
-              <h3 class="font-bold text-slate-900 text-base mb-2">API Security Review</h3>
+              <h3 class="font-bold text-slate-900 text-base mb-2">API & Cloud Security Review</h3>
               <p class="text-xs text-slate-600 leading-relaxed">Assessing authentication policies, token management, rate-limiting, and data leak prevention across REST and GraphQL APIs.</p>
             </div>
             <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
-              <h3 class="font-bold text-slate-900 text-base mb-2">Infrastructure & Cloud Hardening</h3>
+              <h3 class="font-bold text-slate-900 text-base mb-2">Infrastructure Security</h3>
               <p class="text-xs text-slate-600 leading-relaxed">Hardening network perimeters, IAM roles, cloud security posture (CSPM), virtual private clouds, and host servers.</p>
             </div>
-            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
-              <h3 class="font-bold text-slate-900 text-base mb-2">Security Risk Assessment</h3>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs md:col-span-3">
+              <h3 class="font-bold text-slate-900 text-base mb-2">Security Posture Audit</h3>
               <p class="text-xs text-slate-600 leading-relaxed">Evaluating operational threat exposure and creating practical, prioritized remediation blueprints for technical teams.</p>
             </div>
           </div>
@@ -980,7 +971,7 @@
               <p class="text-xs text-slate-600 leading-relaxed">Analyzing system availability, backup integrity, failover capability, and operational IT dependencies.</p>
             </div>
             <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
-              <h3 class="font-bold text-slate-900 text-base mb-2">Cybersecurity Risk Assessment</h3>
+              <h3 class="font-bold text-slate-900 text-base mb-2">Cyber Risk Assessment</h3>
               <p class="text-xs text-slate-600 leading-relaxed">Targeted reviews of cyber attack surfaces, data exposure vectors, and ransomware resilience.</p>
             </div>
             <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
@@ -1037,7 +1028,7 @@
               <p class="text-xs text-slate-600 leading-relaxed">Optimizing change management, incident handling, ticketing workflows, and IT service management.</p>
             </div>
             <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
-              <h3 class="font-bold text-slate-900 text-base mb-2">Cloud Architecture Consulting</h3>
+              <h3 class="font-bold text-slate-900 text-base mb-2">Cloud Architecture Review</h3>
               <p class="text-xs text-slate-600 leading-relaxed">Architecting secure, cost-optimized, and resilient multi-cloud and hybrid environments.</p>
             </div>
             <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
@@ -1048,8 +1039,8 @@
               <h3 class="font-bold text-slate-900 text-base mb-2">Technology Risk</h3>
               <p class="text-xs text-slate-600 leading-relaxed">Benchmarking technology obsolescence, single-points-of-failure, and scalability bottlenecks.</p>
             </div>
-            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs">
-              <h3 class="font-bold text-slate-900 text-base mb-2">IT Governance & Digital Transformation</h3>
+            <div class="p-6 border border-slate-200 rounded-xl bg-white shadow-xs md:col-span-3">
+              <h3 class="font-bold text-slate-900 text-base mb-2">IT Governance</h3>
               <p class="text-xs text-slate-600 leading-relaxed">Establishing clear decision-making frameworks, vendor oversight, and smooth legacy migrations.</p>
             </div>
           </div>
@@ -1082,7 +1073,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div class="p-8 border border-slate-200 rounded-2xl bg-slate-50/50">
-            <h3 class="font-heading text-2xl font-bold text-slate-900">HR Consulting</h3>
+            <h3 class="font-heading text-2xl font-bold text-slate-900">HR Consulting & Process Development</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">Practical support for organizations looking to establish, audit, or improve organizational HR processes and policies.</p>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-4 text-xs text-slate-700">
               <div>• HR process consulting</div>
@@ -1118,7 +1109,7 @@
           </div>
 
           <div class="p-8 border border-slate-200 rounded-2xl bg-slate-50/50">
-            <h3 class="font-heading text-2xl font-bold text-slate-900">Workforce Solutions</h3>
+            <h3 class="font-heading text-2xl font-bold text-slate-900">Workforce Solutions, Planning & Talent Development</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">Strategic people solutions engineered to scale capability rather than simple manpower supply.</p>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-4 text-xs text-slate-700">
               <div>• Workforce planning</div>
@@ -1420,7 +1411,7 @@
                 <textarea id="form-message" rows="4" required placeholder="Tell us about your objectives, current timeline, or framework requirements..." class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none"></textarea>
               </div>
 
-              <button type="submit" class="w-full py-3.5 px-6 text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 rounded-lg shadow-xs transition-all text-center">
+              <button type="submit" id="form-submit-btn" class="w-full py-3.5 px-6 text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 rounded-lg shadow-xs transition-all text-center">
                 Send Requirement
               </button>
 
@@ -1518,8 +1509,10 @@
     </div>
   </footer>
 
-  <!-- ================= LOGIC & ROUTING CONTROLLER ================= -->
+  <!-- ================= LOGIC & GOOGLE SHEETS FORM HANDLER ================= -->
   <script>
+    const GOOGLE_SHEETS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzE_L-Eufh__EwGnmMjhNWi8egtAkHsGvDw7Qw2yTntdrUNtwT3cFh-AafOlQuSznGYlg/exec";
+
     function navigateTo(pageId) {
       const views = document.querySelectorAll('.page-view');
       views.forEach(v => v.classList.remove('active'));
@@ -1577,14 +1570,47 @@
       }, 50);
     }
 
-    function handleFormSubmit(e) {
+    // Google Sheets Async Form Submission Handler
+    async function handleFormSubmit(e) {
       e.preventDefault();
-      document.getElementById('contactForm').classList.add('hidden');
-      document.getElementById('formSuccessMessage').classList.remove('hidden');
+
+      const submitBtn = document.getElementById('form-submit-btn');
+      const originalText = submitBtn.innerText;
+      submitBtn.innerText = "Submitting...";
+      submitBtn.disabled = true;
+
+      const payload = {
+        name: document.getElementById('form-name').value,
+        company: document.getElementById('form-company').value,
+        email: document.getElementById('form-email').value,
+        phone: document.getElementById('form-phone') ? document.getElementById('form-phone').value : "",
+        country: document.getElementById('form-country') ? document.getElementById('form-country').value : "",
+        interest: document.getElementById('form-interest').value,
+        message: document.getElementById('form-message').value
+      };
+
+      try {
+        await fetch(GOOGLE_SHEETS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        document.getElementById('contactForm').classList.add('hidden');
+        document.getElementById('formSuccessMessage').classList.remove('hidden');
+      } catch (error) {
+        alert('There was an issue sending your message. Please try again or reach out directly.');
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+      }
     }
 
     function resetContactForm() {
       document.getElementById('contactForm').reset();
+      const submitBtn = document.getElementById('form-submit-btn');
+      submitBtn.innerText = "Send Requirement";
+      submitBtn.disabled = false;
       document.getElementById('contactForm').classList.remove('hidden');
       document.getElementById('formSuccessMessage').classList.add('hidden');
     }
